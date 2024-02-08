@@ -4,9 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Anh Nguyen</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <script>
+      function setup() {
+        var canvas = createCanvas(windowWidth, windowHeight);
+        canvas.parent('background');
+      }
+
+      function draw() {
+        background(255);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+    </script>
   </head>
   <body>
+    <div id="background"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
