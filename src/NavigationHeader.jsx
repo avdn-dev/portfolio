@@ -62,7 +62,7 @@ export default function Example () {
             </a>
           ))}
         </div>
-        <div className="hidden md:flex md:flex-1 md:justify-end">
+        <div className="hidden md:flex lg:flex-1 lg:justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
             {contactLinks.map((item) => (
               <a key={item.name} href={item.href}>
