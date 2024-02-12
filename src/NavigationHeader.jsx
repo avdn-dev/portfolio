@@ -7,6 +7,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Logo from './Logo.jsx'
 
 const navigation = [
   { name: 'Projects', href: '#' },
@@ -23,10 +24,8 @@ export default function NavigationHeader () {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:px-8"
         aria-label="Global">
         <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Anh Nguyen</span>
-          <img className="h-8 w-auto"
-               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-               alt=""/>
+          <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
+          <Logo/>
         </a>
         <div className="flex sm:hidden">
           <button
@@ -54,12 +53,8 @@ export default function NavigationHeader () {
           className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-800 bg-opacity-70 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Anh Nguyen</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
+              <Logo/>
             </a>
             <button
               type="button"
