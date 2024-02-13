@@ -1,7 +1,10 @@
 // TODO:
 // - Update navigation links
-// - Update styling
+// - Update styling (change mobile menu to have frosted glass effect like with projects
 // - Make mobile menu disappear?
+// - Fix padding around resume link in mobile menu
+// - Hide open menu button on mobile when menu is open
+// - Change social links in mobile menu to be vertical
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'

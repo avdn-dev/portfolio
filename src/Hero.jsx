@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero () {
   return (
     <div className="flex-grow relative isolate px-6 pt-14 lg:px-8">
@@ -12,10 +14,10 @@ export default function Hero () {
             backend, web, mobile development and UI/UX design.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#"
-               className="text-sm font-semibold leading-6">
-              See more <span aria-hidden="true">→</span>
-            </a>
+            <Link to="projects"
+                  className="text-sm font-semibold leading-6">
+              See my work <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </div>
