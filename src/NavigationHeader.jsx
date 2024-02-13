@@ -1,5 +1,4 @@
 // TODO:
-// - Update logo image
 // - Update navigation links
 // - Update styling
 // - Make mobile menu disappear?
@@ -42,14 +41,14 @@ const contactLinks = [
   },
 ]
 
-export default function Example () {
+export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <header>
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
-        <div className="flex lg:flex-1">
+        <div className="flex flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
             <Logo/>
@@ -74,7 +73,7 @@ export default function Example () {
           ))}
           {<a href="./assets/resume.pdf" download>Resume</a>}
         </div>
-        <div className="hidden md:flex lg:flex-1 lg:justify-end">
+        <div className="hidden md:flex flex-1 justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
             {contactLinks.map((item) => (
               <Link key={item.name} to={item.href}>
