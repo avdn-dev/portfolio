@@ -15,7 +15,7 @@ import Email from './Email.jsx'
 
 const navigationLinks = [
   { name: 'Projects', href: 'projects' },
-  { name: 'About me', href: '#' },
+  { name: 'Info', href: 'info' },
 ]
 
 const contactLinks = [

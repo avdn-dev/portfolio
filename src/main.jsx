@@ -6,6 +6,7 @@ import Projects from './Projects.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './Root.jsx'
+import Info from './Info.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: 'projects',
         element: <Projects/>,
+      },
+      {
+        path: 'info',
+        element: <Info/>,
       },
     ],
   },
