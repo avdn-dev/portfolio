@@ -5,11 +5,12 @@ export default function Hero () {
         <div className="text-center">
           <h1
             className="text-4xl font-bold tracking-tight sm:text-6xl">
-            Hi! I'm Anh, a totally rad chad
+            Hi, I'm Anh!
           </h1>
           <p className="mt-6 text-lg leading-8">
-            I've got experience in a bunch of stuff, and I'm really good at
-            it. I'm also a really cool person, so you should hire me.
+            I'm a final year computer science student with experience in
+            backend, web, mobile development and UI/UX design. Don't believe me?
+            Check out my work.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a href="#"
