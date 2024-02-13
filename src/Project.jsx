@@ -1,3 +1,6 @@
+// TODO:
+// - Add in technologies used
+
 export default function Project ({ name, description, picture }) {
   return (
     <div
