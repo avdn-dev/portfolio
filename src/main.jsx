@@ -11,14 +11,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div></div>,
+    element: <NavigationHeader/>,
+    errorElement: <div>404</div>,
   },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}/>
-    <NavigationHeader/>
     <Hero/>
     <Projects/>
     <Footer/>
