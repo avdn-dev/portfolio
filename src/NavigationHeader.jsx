@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './Logo.jsx'
+import { Link } from 'react-router-dom'
 
 const navigationLinks = [
   { name: 'Projects', href: 'projects' },
@@ -39,10 +40,10 @@ export default function Example () {
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
             <Logo/>
-          </a>
+          </Link>
         </div>
         <div className="flex md:hidden">
           <button
@@ -56,19 +57,19 @@ export default function Example () {
         </div>
         <div className="hidden md:flex md:gap-x-12">
           {navigationLinks.map((item) => (
-            <a key={item.name} href={item.href}
-               className="text-sm font-semibold leading-6">
+            <Link key={item.name} to={item.href}
+                  className="text-sm font-semibold leading-6">
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden md:flex lg:flex-1 lg:justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
             {contactLinks.map((item) => (
-              <a key={item.name} href={item.href}>
+              <Link key={item.name} to={item.href}>
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true"/>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -79,10 +80,10 @@ export default function Example () {
         <Dialog.Panel
           className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
               <Logo/>
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5"
@@ -96,22 +97,22 @@ export default function Example () {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigationLinks.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="py-6">
                 <div className="flex justify-center space-x-6 md:order-2">
                   {contactLinks.map((item) => (
-                    <a key={item.name} href={item.href}>
+                    <Link key={item.name} to={item.href}>
                       <span className="sr-only">{item.name}</span>
                       <item.icon className="h-6 w-6" aria-hidden="true"/>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
