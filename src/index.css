@@ -9,7 +9,7 @@
     color: white;
 }
 
-#background {
+#canvas {
     position: absolute;
     z-index: -1;
 }
