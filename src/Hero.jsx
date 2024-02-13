@@ -9,8 +9,7 @@ export default function Hero () {
           </h1>
           <p className="mt-6 text-lg leading-8">
             I'm a final year computer science student with experience in
-            backend, web, mobile development and UI/UX design. Don't believe me?
-            Check out my work.
+            backend, web, mobile development and UI/UX design.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a href="#"

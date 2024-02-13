@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom'
 const navigationLinks = [
   { name: 'Projects', href: 'projects' },
   { name: 'About me', href: '#' },
-  { name: 'Contact', href: '#' },
 ]
 
 const contactLinks = [
@@ -62,6 +61,7 @@ export default function Example () {
               {item.name}
             </Link>
           ))}
+          {<a href="./assets/resume.pdf" download>Resume</a>}
         </div>
         <div className="hidden md:flex lg:flex-1 lg:justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
@@ -97,14 +97,12 @@ export default function Example () {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigationLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
-                  >
+                  <Link key={item.name} to={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">
                     {item.name}
                   </Link>
                 ))}
+                {<a href="./assets/resume.pdf" download>Resume</a>}
               </div>
               <div className="py-6">
                 <div className="flex justify-center space-x-6 md:order-2">
