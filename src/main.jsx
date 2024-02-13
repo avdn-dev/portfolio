@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+], { basename: import.meta.env.DEV ? '/' : '/portfolio/' })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
