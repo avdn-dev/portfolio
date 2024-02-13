@@ -74,7 +74,7 @@ export default function NavigationHeader () {
               {item.name}
             </Link>
           ))}
-          {<a href="./assets/resume.pdf" download>Resume</a>}
+          {<a href="resume.pdf" download>Resume</a>}
         </div>
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
@@ -117,7 +117,7 @@ export default function NavigationHeader () {
                     {item.name}
                   </Link>
                 ))}
-                {<a href="./assets/resume.pdf" download>Resume</a>}
+                {<a href="../public/resume.pdf" download>Resume</a>}
               </div>
               <div className="py-6">
                 <div className="flex justify-center space-x-6 md:order-2">
