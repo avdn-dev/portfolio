@@ -1,3 +1,8 @@
+// TODO:
+// - Rewrite copy
+// - Replace placeholder images
+// - Change image collage into single image
+
 const stats = [
   { label: 'JetBrains Academy tracks 100% completed', value: '13' },
   { label: 'Educative.io courses taken', value: '8' },

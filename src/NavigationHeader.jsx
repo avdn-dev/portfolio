@@ -5,6 +5,9 @@
 // - Fix padding around resume link in mobile menu
 // - Hide open menu button on mobile when menu is open
 // - Change social links in mobile menu to be vertical
+// - Add progress bar for scrolling
+// - Make header sticky
+// - Make social links open in new tab (ensure good security)
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
