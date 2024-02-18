@@ -7,7 +7,6 @@
 // - Change social links in mobile menu to be vertical
 // - Add progress bar for scrolling
 // - Make header sticky
-// - Make social links open in new tab (ensure good security)
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
@@ -82,10 +81,11 @@ export default function NavigationHeader () {
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
             {contactLinks.map((item) => (
-              <Link key={item.name} to={item.href}>
+              <a key={item.name} href={item.href} target="_blank"
+                 rel="noopener noreferrer">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true"/>
-              </Link>
+              </a>
             ))}
             <Email/>
             <a></a>
@@ -125,10 +125,11 @@ export default function NavigationHeader () {
               <div className="py-6">
                 <div className="flex justify-center space-x-6 md:order-2">
                   {contactLinks.map((item) => (
-                    <Link key={item.name} to={item.href}>
+                    <a key={item.name} href={item.href} target="_blank"
+                       rel="noopener noreferrer">
                       <span className="sr-only">{item.name}</span>
                       <item.icon className="h-6 w-6" aria-hidden="true"/>
-                    </Link>
+                    </a>
                   ))}
                   <Email/>
                 </div>
