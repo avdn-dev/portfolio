@@ -123,7 +123,7 @@ export default function NavigationHeader () {
                 {<a href="../public/resume.pdf" download>Resume</a>}
               </div>
               <div className="py-6">
-                <div className="flex justify-center space-x-6 md:order-2">
+                <div className="space-y-2 py-6">
                   {contactLinks.map((item) => (
                     <a key={item.name} href={item.href} target="_blank"
                        rel="noopener noreferrer">
