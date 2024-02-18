@@ -4,9 +4,7 @@
 // - Make mobile menu disappear?
 // - Fix padding around resume link in mobile menu
 // - Hide open menu button on mobile when menu is open
-// - Change social links in mobile menu to be vertical
 // - Add progress bar for scrolling
-// - Make header sticky
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
@@ -50,7 +48,7 @@ export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header>
+    <header className="sticky top-0 z-10">
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
         <div className="flex flex-1">
