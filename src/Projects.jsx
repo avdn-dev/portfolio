@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import projects from './projects.js'
 
-export default function ProjectsList () {
+export default function Projects () {
   return (
     <ul role="list"
         className="flex-grow grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {projects.map((project) => (
+      {projects.map(project => (
         <li
           key={project.name}
           className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10"
@@ -27,6 +27,3 @@ export default function ProjectsList () {
     </ul>
   )
 }
-
-
-

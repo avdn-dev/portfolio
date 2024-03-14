@@ -9,10 +9,11 @@ const projects = [
         usage: 'test',
       },
     ],
-    route: '/projectsList/eye-empathise',
+    path: '/eye-empathise',
+    route: '/projects/eye-empathise',
   },
   {
-    name: 'Project 2',
+    name: 'Portfolio',
     description: 'Description 2',
     picture: 'https://via.placeholder.com/150',
     technologies: [
@@ -21,10 +22,11 @@ const projects = [
         usage: 'test',
       },
     ],
-    route: '/projectsList/eye-empathise',
+    path: '/portfolio',
+    route: '/projects/portfolio',
   },
   {
-    name: 'Project 3',
+    name: 'Accounting Service',
     description: 'Description 3',
     picture: 'https://via.placeholder.com/150',
     technologies: [
@@ -33,10 +35,11 @@ const projects = [
         usage: 'test',
       },
     ],
-    route: '/projectsList/eye-empathise',
+    path: '/accounting-service',
+    route: '/projects/accounting-service',
   },
   {
-    name: 'Project 3',
+    name: 'Journey Genie',
     description: 'Description 3',
     picture: 'https://via.placeholder.com/150',
     technologies: [
@@ -45,10 +48,11 @@ const projects = [
         usage: 'test',
       },
     ],
-    route: '/projectsList/eye-empathise',
+    path: '/journey-genie',
+    route: '/projects/journey-genie',
   },
   {
-    name: 'Project 3',
+    name: '100 Days of SwiftUI',
     description: 'Description 3',
     picture: 'https://via.placeholder.com/150',
     technologies: [
@@ -57,8 +61,23 @@ const projects = [
         usage: 'test',
       },
     ],
-    route: '/projectsList/eye-empathise',
+    path: '/100-days-of-swiftui',
+    route: '/projects/100-days-of-swiftui',
+  },
+  {
+    name: 'Anti Fraud System',
+    description: 'Description 3',
+    picture: 'https://via.placeholder.com/150',
+    technologies: [
+      {
+        name: 'Technologies',
+        usage: 'test',
+      },
+    ],
+    path: '/anti-fraud-system',
+    route: '/projects/anti-fraud-system',
   },
 ]
 
 export default projects
+
