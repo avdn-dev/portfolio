@@ -1,9 +1,11 @@
 import Footer from './Footer.jsx'
 import { Link } from 'react-router-dom'
+import NavigationHeader from './NavigationHeader.jsx'
 
 export default function Error () {
   return (
     <>
+      <NavigationHeader/>
       <main className="flex flex-grow relative isolate min-h-full">
         <div
           className="self-center mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8">
