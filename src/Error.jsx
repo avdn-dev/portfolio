@@ -1,3 +1,8 @@
+// TODO:
+// Make error section responsive (make the splash centered)
+// Add animation to the go home button
+// Finalise copy
+
 import Footer from './Footer.jsx'
 import { Link } from 'react-router-dom'
 import NavigationHeader from './NavigationHeader.jsx'

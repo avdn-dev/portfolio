@@ -1,5 +1,8 @@
 // TODO:
-// - Add in technologies used
+// - Add in carousel for technologies used
+// - Add section for project learnings/challenges
+// - Add project code link
+// - Add transition for project
 
 export default function Project ({ name, description, picture, technologies }) {
   return (

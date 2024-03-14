@@ -5,6 +5,9 @@
 // - Fix padding around resume link in mobile menu
 // - Hide open menu button on mobile when menu is open
 // - Add progress bar for scrolling
+// - Make navigation bar dark frosted glass when scrolling down
+// - Make fonts and icons larger
+// - Add hover effects
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'

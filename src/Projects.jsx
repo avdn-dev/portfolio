@@ -1,3 +1,10 @@
+// TODO:
+// - Fix padding around project cards
+// - Change photos displayed
+// - Add hover effect for each project
+// - Add a quick link for each github repo
+// - Add transitions for cards
+
 import { Link } from 'react-router-dom'
 import projects from './projects.js'
 

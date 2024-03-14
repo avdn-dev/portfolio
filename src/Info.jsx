@@ -2,6 +2,9 @@
 // - Rewrite copy
 // - Replace placeholder images
 // - Change image collage into single image
+// - Add images for technologies
+// - Add proper margins for all sizes
+// - Ensure responsiveness
 
 const stats = [
   { label: 'JetBrains Academy tracks 100% completed', value: '13' },

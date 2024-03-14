@@ -1,3 +1,8 @@
+// TODO:
+// Make hero section responsive (make the splash centered)
+// Add animation to the see more button
+// Finalise copy
+
 import { Link } from 'react-router-dom'
 
 export default function Hero () {
