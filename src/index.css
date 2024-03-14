@@ -19,3 +19,48 @@
     flex-direction: column;
     min-height: 100vh;
 }
+
+/* Animation for text censor effect
+@keyframes underline-expand {
+    0% {
+        background-size: 0 1em;
+        background-position: left;
+    }
+    40% {
+        background-size: 100% 1em;
+        background-position: left;
+    }
+    60% {
+        background-size: 100% 1em;
+        background-position: right;
+    }
+    100% {
+        background-size: 0 1em;
+        background-position: right;
+    }
+}
+*/
+
+.underline {
+    text-decoration: none;
+    /* Change the em value to 1 for the text censor */
+    background: linear-gradient(white, white) bottom / 0 0.1em no-repeat;
+    transition: background-size 0.5s;
+    background-position: left bottom;
+}
+
+.underline:hover {
+    background-size: 100% .1em;
+    /* Uncomment for animation effect
+    animation: underline-expand 0.5s;
+    */
+}
+
+.enlarge {
+    transition: transform 0.5s;
+    transform-origin: center;
+}
+
+.enlarge:hover {
+    transform: scale(1.3) !important;
+}

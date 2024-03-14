@@ -7,7 +7,6 @@
 // - Add progress bar for scrolling
 // - Make navigation bar dark frosted glass when scrolling down
 // - Make fonts and icons larger
-// - Add hover effects
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
@@ -54,8 +53,8 @@ export default function NavigationHeader () {
     <header className="sticky top-0 z-10">
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
-        <div className="flex flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+        <div className="flex flex-1 justify-start">
+          <Link to="/" className="-m-1.5 p-1.5 enlarge">
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
             <Logo/>
           </Link>
@@ -70,26 +69,25 @@ export default function NavigationHeader () {
             <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
           </button>
         </div>
-        <div className="hidden md:flex md:gap-x-12">
+        <div className="hidden md:flex flex-1 justify-center gap-x-12">
           {navigationLinks.map((item) => (
             <Link key={item.name} to={item.href}
-                  className="text-sm font-semibold leading-6">
+                  className="text-sm font-semibold leading-6 underline">
               {item.name}
             </Link>
           ))}
-          {<a href="resume.pdf" download>Resume</a>}
+          {<a href="resume.pdf" download className="underline">Resume</a>}
         </div>
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
             {contactLinks.map((item) => (
               <a key={item.name} href={item.href} target="_blank"
-                 rel="noopener noreferrer">
+                 rel="noopener noreferrer" className="enlarge">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true"/>
               </a>
             ))}
             <Email/>
-            <a></a>
           </div>
         </div>
       </nav>
@@ -117,7 +115,7 @@ export default function NavigationHeader () {
               <div className="space-y-2 py-6">
                 {navigationLinks.map((item) => (
                   <Link key={item.name} to={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7">
                     {item.name}
                   </Link>
                 ))}
