@@ -19,7 +19,7 @@ export default function Hero () {
             backend, web, mobile development and UI/UX design.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link to="projectsList"
+            <Link to="projects"
                   className="text-sm font-semibold leading-6">
               See my work <span aria-hidden="true">→</span>
             </Link>
