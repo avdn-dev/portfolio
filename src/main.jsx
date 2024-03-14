@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Hero from './Hero.jsx'
 import './index.css'
-import Projects from './Projects.jsx'
+import ProjectsList from './ProjectsList.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './Root.jsx'
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'projects',
-        element: <Projects/>,
+        element: <ProjectsList/>,
       },
       {
         path: 'info',
