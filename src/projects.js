@@ -3,6 +3,7 @@ const projects = [
     name: 'Eye Empathise',
     description: 'YOYOYO',
     picture: 'https://via.placeholder.com/150',
+    details: 'test',
     technologies: [
       {
         name: 'Technologies',
@@ -11,6 +12,12 @@ const projects = [
     ],
     path: '/eye-empathise',
     route: '/projects/eye-empathise',
+    learnings: [
+      {
+        name: 'Learnings',
+        description: 'test',
+      },
+    ],
   },
   {
     name: 'Portfolio',

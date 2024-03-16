@@ -26,7 +26,11 @@ const router = createBrowserRouter(
           <Route path={project.route} element={<Project name={project.name}
                                                         description={project.description}
                                                         picture={project.picture}
-                                                        technologies={project.technologies}/>}/>
+                                                        details={project.details}
+                                                        technologies={project.technologies}
+                                                        learnings={project.learnings}
+          />}/>
+
         ))}
       </Route>
       <Route path={'info'} element={<Info/>}/>
