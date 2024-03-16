@@ -3,15 +3,25 @@
 // Add text censor effect to experiences
 
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const areas = ['backend dev.', 'web dev.', 'iOS dev.', 'UI design.']
 
 export default function Hero () {
   const [area, setArea] = useState(areas[0])
   const [animate, setAnimate] = useState(false)
+  const spanRef = useRef(null)
 
   useEffect(() => {
+    // Add the animationend event listener
+    const span = spanRef.current
+    const ensureCensored = () => {
+      if (span.classList.contains('censor-animate-start')) {
+        span.classList.add('censored')
+      }
+    }
+    span.addEventListener('animationend', ensureCensored)
+
     const interval = setInterval(() => {
       setAnimate(true) // Start the animation
 
@@ -25,10 +35,11 @@ export default function Hero () {
 
         setAnimate(false) // Remove the animation class
       }, 500) // Delay in milliseconds (equal to the duration of the animation)
-    }, 2000)
+    }, 2500)
 
     return () => {
       clearInterval(interval)
+      span.removeEventListener('animationend', ensureCensored)
     }
   }, [])
 
@@ -41,11 +52,10 @@ export default function Hero () {
       </h1>
       <p className="mt-6 text-lg leading-8">
         {'I\'m a final year computer science student with experience in '}
-
-        <span
-          className={`censor inline-block w-28 text-left ${animate
-            ? 'censor-animate'
-            : ''}`}>
+        <span ref={spanRef}
+              className={`censor inline-block w-28 text-left ${animate
+                ? 'censor-animate-start'
+                : 'censor-animate-end'}`}>
                   {area}
                 </span>
       </p>

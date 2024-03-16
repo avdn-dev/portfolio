@@ -26,37 +26,29 @@
         background-size: 0 1.2em;
         background-position: left;
     }
-    40% {
+    90% {
         background-size: 100% 1.2em;
         background-position: left;
     }
-    60% {
-        background-size: 100% 1.2em;
-        background-position: right;
-    }
     100% {
-        background-size: 0 1.2em;
+        background-size: 100% 1.2em;
         background-position: right;
     }
 }
 
-/* Start animation for text censor effect */
-@keyframes censor-effect-start {
+/* End animation for text censor effect */
+@keyframes censor-effect-end {
     0% {
+        background-size: 100% 1.2em;
+        background-position: right;
+    }
+    90% {
         background-size: 0 1.2em;
-        background-position: left;
-    }
-    40% {
-        background-size: 100% 1.2em;
-        background-position: left;
-    }
-    60% {
-        background-size: 100% 1.2em;
         background-position: right;
     }
     100% {
         background-size: 0 1.2em;
-        background-position: right;
+        background-position: left;
     }
 }
 
@@ -67,7 +59,16 @@
 }
 
 .censor-animate-start {
-    animation: censor-effect 1s;
+    animation: censor-effect-start 0.5s;
+}
+
+.censor-animate-end {
+    animation: censor-effect-end 0.5s;
+}
+
+.censored {
+    background-size: 100% 1.2em;
+    background-position: right;
 }
 
 .underline {
