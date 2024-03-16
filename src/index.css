@@ -20,30 +20,58 @@
     min-height: 100vh;
 }
 
-/* Animation for text censor effect
-@keyframes underline-expand {
+/* Start animation for text censor effect */
+@keyframes censor-effect-start {
     0% {
-        background-size: 0 1em;
+        background-size: 0 1.2em;
         background-position: left;
     }
     40% {
-        background-size: 100% 1em;
+        background-size: 100% 1.2em;
         background-position: left;
     }
     60% {
-        background-size: 100% 1em;
+        background-size: 100% 1.2em;
         background-position: right;
     }
     100% {
-        background-size: 0 1em;
+        background-size: 0 1.2em;
         background-position: right;
     }
 }
-*/
+
+/* Start animation for text censor effect */
+@keyframes censor-effect-start {
+    0% {
+        background-size: 0 1.2em;
+        background-position: left;
+    }
+    40% {
+        background-size: 100% 1.2em;
+        background-position: left;
+    }
+    60% {
+        background-size: 100% 1.2em;
+        background-position: right;
+    }
+    100% {
+        background-size: 0 1.2em;
+        background-position: right;
+    }
+}
+
+.censor {
+    text-decoration: none;
+    background: linear-gradient(white, white) bottom / 0 1em no-repeat;
+    background-position: left bottom;
+}
+
+.censor-animate-start {
+    animation: censor-effect 1s;
+}
 
 .underline {
     text-decoration: none;
-    /* Change the em value to 1 for the text censor */
     background: linear-gradient(white, white) bottom / 0 0.1em no-repeat;
     transition: background-size 0.5s;
     background-position: left bottom;
@@ -51,9 +79,6 @@
 
 .underline:hover {
     background-size: 100% .1em;
-    /* Uncomment for animation effect
-    animation: underline-expand 0.5s;
-    */
 }
 
 .enlarge {
