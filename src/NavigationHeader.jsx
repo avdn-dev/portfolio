@@ -5,10 +5,9 @@
 // - Fix padding around resume link in mobile menu
 // - Hide open menu button on mobile when menu is open
 // - Add progress bar for scrolling
-// - Make navigation bar dark frosted glass when scrolling down
 // - Make fonts and icons larger
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './Logo.jsx'
@@ -48,9 +47,23 @@ const contactLinks = [
 
 export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const checkScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', checkScroll)
+    return () => {
+      window.removeEventListener('scroll', checkScroll)
+    }
+  }, [])
 
   return (
-    <header className="sticky top-0 z-10">
+    <header className={`sticky top-0 z-10 transition-all ${isScrolled
+      ? 'shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10'
+      : ''}`}>
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
         <div className="flex flex-1 justify-start">
