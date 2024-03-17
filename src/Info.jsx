@@ -108,7 +108,8 @@ export default function Info () {
                 consultancy, to working as a day fill team member at my local
                 Coles. Across the board I&apos;ve developed strong communication
                 skills - both written and verbal - that I leverage to understand
-                and engage with any <audience className=""></audience></p>
+                and engage with any audience.
+              </p>
               <br/>
               <p className="leading-7">
                 Most recently I&apos;ve been
@@ -148,7 +149,7 @@ export default function Info () {
               </p>
             </div>
             <div
-              className="flex-1 flex flex-col justify-start gap-6 ">
+              className="flex-1 flex flex-col justify-between gap-6 ">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="text-lg font-medium">{stat.label}</dt>
