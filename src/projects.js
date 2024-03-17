@@ -7,6 +7,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
@@ -26,6 +27,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
@@ -39,6 +41,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
@@ -52,6 +55,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
@@ -65,6 +69,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
@@ -78,6 +83,7 @@ const projects = [
     technologies: [
       {
         name: 'Technologies',
+        image: 'https://via.placeholder.com/150',
         usage: 'test',
       },
     ],
