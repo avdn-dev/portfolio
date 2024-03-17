@@ -1,6 +1,8 @@
 // TODO:
 // - Replace placeholder image and alt text for it
-// - Change tools and technologies section to use infinite scrolling list
+// - Add technologies
+
+import InfiniteScrollingTechnologies from './InfiniteScrollingTechnologies.jsx'
 
 const stats = [
   { label: 'University students tutored', value: '100+' },
@@ -14,6 +16,41 @@ const stats = [
   { label: 'Programming languages used in depth', value: '6' },
   { label: 'Projects completed', value: '40+' },
   { label: 'Course certificates obtained', value: '20+' },
+]
+
+const technologies = [
+  {
+    name: 'Tech 1',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 2',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 4',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 5',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 6',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 7',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Tech 8',
+    image: 'https://via.placeholder.com/150',
+  },
 ]
 
 const interests = [
@@ -164,14 +201,7 @@ export default function Info () {
           <h1 className="text-3xl mb-8 font-bold">
             Tools and technologies
           </h1>
-          {/* Replace with technology list */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
-            {new Array(6).fill(0).map((_, index) => (
-              <img key={index} className="h-12 mx-auto"
-                   src="https://via.placeholder.com/150" alt=""/>
-            ))}
-          </div>
+          <InfiniteScrollingTechnologies technologies={technologies}/>
         </section>
 
         <section>
