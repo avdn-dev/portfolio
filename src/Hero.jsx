@@ -35,7 +35,7 @@ export default function Hero () {
 
         setAnimate(false)
       }, 500)
-    }, 2500)
+    }, 2000)
 
     return () => {
       clearInterval(interval)

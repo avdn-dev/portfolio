@@ -21,7 +21,7 @@ export default function Project ({
             {name}
           </h1>
           <p className="leading-7">
-            {description}
+            {/*description*/}{'Under development.'}
           </p>
           <img src="https://via.placeholder.com/150" alt=""
                className="rounded-lg max-w-xl"/>
@@ -32,7 +32,7 @@ export default function Project ({
             Technical details
           </h1>
           <p className="leading-7 mb-6">
-            {details}
+            {/*details*/}{'Under development.'}
           </p>
           <InfiniteScrollingTechnologies technologies={technologies}/>
         </section>
@@ -44,9 +44,10 @@ export default function Project ({
           <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {learnings.map((learning) => (
               <div key={learning.name}>
-                <dt className="text-lg font-semibold">{learning.name}</dt>
+                <dt
+                  className="text-lg font-semibold">{/*learning.name*/}{'Under development.'}</dt>
                 <dd
-                  className="mt-1 leading-7">{learning.description}</dd>
+                  className="mt-1 leading-7">{/*learning.description*/}{'Under development.'}</dd>
               </div>
             ))}
           </dl>

@@ -13,12 +13,13 @@ const projects = [
     ],
     path: '/eye-empathise',
     route: '/projects/eye-empathise',
-    learnings: [
+    /*learnings: [
       {
         name: 'Learnings',
         description: 'test',
       },
     ],
+     */
   },
   {
     name: 'Portfolio',
