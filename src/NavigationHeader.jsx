@@ -117,7 +117,7 @@ export default function NavigationHeader () {
             leaveTo="translate-x-full"
           >
             <Dialog.Panel
-              className="fixed inset-y-0 w-full px-6 py-6 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 divide-y-2 divide-white/10 space-y-6">
+              className="z-20 fixed inset-y-0 w-full px-6 py-6 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 divide-y-2 divide-white/10 space-y-6">
               <div className="flex items-center justify-between mb-4">
                 <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
                       onClick={() => setMobileMenuOpen(false)}>
