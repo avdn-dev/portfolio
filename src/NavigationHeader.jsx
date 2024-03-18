@@ -1,6 +1,5 @@
 // TODO:
 // - Add animated burger menu icon
-// - Make clicking on links close the mobile menu
 
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
@@ -120,7 +119,8 @@ export default function NavigationHeader () {
             <Dialog.Panel
               className="fixed inset-y-0 w-full px-6 py-6 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 divide-y-2 divide-white/10 space-y-6">
               <div className="flex items-center justify-between mb-4">
-                <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge">
+                <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
+                      onClick={() => setMobileMenuOpen(false)}>
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
                   <Logo height="h-14"/>
                 </Link>
@@ -137,7 +137,9 @@ export default function NavigationHeader () {
                 <div className="space-y-1 pt-6">
                   {navigationLinks.map((item) => (
                     <li key={item.name}><Link to={item.href}
-                                              className="text-2xl font-semibold underline">
+                                              className="text-2xl font-semibold underline"
+                                              onClick={() => setMobileMenuOpen(
+                                                false)}>
                       {item.name}
                     </Link></li>
                   ))}
