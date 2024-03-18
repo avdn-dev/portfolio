@@ -1,6 +1,9 @@
-export default function Logo ({ height }) {
+export default function Logo ({ height, isHovered }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={`${height}`}
+    <svg xmlns="http://www.w3.org/2000/svg"
+         className={`${height} enlarge ${isHovered
+           ? 'enlarged'
+           : ''}`}
          zoomAndPan="magnify" viewBox="0 0 208.5 180.749999" height="241"
          preserveAspectRatio="xMidYMid meet" version="1.0" fill="#FFF">
       <defs>

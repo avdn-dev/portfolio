@@ -42,6 +42,8 @@ export default function NavigationHeader () {
   const [isScrolled, setIsScrolled] = useState(false)
   const [closeMobileMenuIsHovered, setCloseMobileMenuIsHovered] = useState(
     false)
+  const [logoIsHovered, setLogoIsHovered] = useState(
+    false)
 
   useEffect(() => {
     const checkScroll = () => {
@@ -62,11 +64,9 @@ export default function NavigationHeader () {
         className="flex items-center justify-between p-6 lg:px-8 pr-8 md:pr-6"
         aria-label="Global">
         <div className="flex flex-1 justify-start">
-          <Link to="/" className={`-m-3 -mx-5 p-1.5 enlarge ${mobileMenuOpen
-            ? 'opacity-0'
-            : 'opacity-100'}`}>
+          <Link to="/" className="`-m-3 -mx-5 p-1.5 enlarge">
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
-            <Logo height="h-14"/>
+            <Logo height="h-14" isHovered={logoIsHovered}/>
           </Link>
         </div>
         <div className="flex md:hidden">
@@ -129,9 +129,12 @@ export default function NavigationHeader () {
               <div
                 className="flex items-center justify-between mb-4">
                 <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
-                      onClick={() => setMobileMenuOpen(false)}>
+                      onClick={() => setMobileMenuOpen(false)}
+                      onMouseEnter={() => setLogoIsHovered(true)}
+                      onMouseLeave={() => setLogoIsHovered(false)}>
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
-                  <Logo height="h-14"/>
+                  <Logo height="h-14 invisible"
+                  />
                 </Link>
                 <button
                   type="button"
