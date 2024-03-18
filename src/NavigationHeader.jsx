@@ -81,7 +81,7 @@ export default function NavigationHeader () {
               {item.name}
             </Link>
           ))}
-          {<a href="resume.pdf" download
+          {<a href="anh-nguyen-resume.pdf" download
               className="text-lg font-semibold underline">Resume</a>}
         </div>
         <div className="hidden md:flex flex-1 justify-end pr-0.5">
@@ -158,7 +158,7 @@ export default function NavigationHeader () {
                       {item.name}
                     </Link></li>
                   ))}
-                  <li><a href="../public/resume.pdf" download
+                  <li><a href="anh-nguyen-resume.pdf" download
                          className="text-2xl font-semibold underline">Resume</a>
                   </li>
                 </div>
