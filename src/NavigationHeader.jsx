@@ -55,8 +55,7 @@ export default function NavigationHeader () {
   }, [])
 
   return (
-    <header className={`isolate z-10 sticky top-0 transition-all ${isScrolled &&
-    !mobileMenuOpen
+    <header className={`isolate z-10 sticky top-0 transition-all ${isScrolled
       ? 'shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10'
       : ''}`}>
       <nav
@@ -85,8 +84,8 @@ export default function NavigationHeader () {
           {<a href="resume.pdf" download
               className="text-lg font-semibold underline">Resume</a>}
         </div>
-        <div className="hidden md:flex flex-1 justify-end">
-          <div className="flex justify-center space-x-6 md:order-2">
+        <div className="hidden md:flex flex-1 justify-end pr-0.5">
+          <div className="flex justify-center space-x-6">
             {contactLinks.map((item) => (
               <a key={item.name} href={item.href} target="_blank"
                  rel="noopener noreferrer" className="enlarge">
@@ -114,7 +113,7 @@ export default function NavigationHeader () {
             leaveTo="translate-x-full"
           >
             <div
-              className="fixed inset-0 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 aria-hidden"/>
+              className="fixed inset-0 backdrop-blur bg-gray-800/30 aria-hidden"/>
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -146,8 +145,11 @@ export default function NavigationHeader () {
                              aria-hidden="true"/>
                 </button>
               </div>
-              <ul className="px-2 divide-y-2 divide-white/10 space-y-6">
-                <div className="space-y-1 pt-6 border-t-2 border-t-white/10">
+              <hr className="-ml-6 -mr-6 border-white/10"/>
+              <ul
+                className="px-2 space-y-6">
+                <div
+                  className="space-y-6 text-center">
                   {navigationLinks.map((item) => (
                     <li key={item.name}><Link to={item.href}
                                               className="text-2xl font-semibold underline"
@@ -160,7 +162,8 @@ export default function NavigationHeader () {
                          className="text-2xl font-semibold underline">Resume</a>
                   </li>
                 </div>
-                <div className="space-y-2 pt-6">
+                <hr className="-ml-8 -mr-8 border-white/10"/>
+                <div className="flex justify-center gap-10">
                   {contactLinks.map((item) => (
                     <li key={item.name}><a href={item.href} target="_blank"
                                            rel="noopener noreferrer">
