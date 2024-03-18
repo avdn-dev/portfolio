@@ -6,9 +6,10 @@
 // - Hide open menu button on mobile when menu is open
 // - Add progress bar for scrolling
 // - Make fonts and icons larger
+// - Change dialog to normal div for mobile menu
 
-import { useEffect, useState } from 'react'
-import { Dialog } from '@headlessui/react'
+import { Fragment, useEffect, useState } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './Logo.jsx'
 import { Link } from 'react-router-dom'
@@ -104,52 +105,66 @@ export default function NavigationHeader () {
           </div>
         </div>
       </nav>
-      <Dialog as="div" className="md:hidden" open={mobileMenuOpen}
-              onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10"/>
-        <Dialog.Panel
-          className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
-              <Logo/>
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigationLinks.map((item) => (
-                  <Link key={item.name} to={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7">
-                    {item.name}
-                  </Link>
-                ))}
-                {<a href="../public/resume.pdf" download>Resume</a>}
+      <Transition appear
+                  show={mobileMenuOpen}
+                  as={Fragment}
+      >
+        <Dialog as="div" className="md:hidden"
+                onClose={() => setMobileMenuOpen(false)}>
+          <Transition.Child
+            as={Fragment}
+            enter="transform transition ease-out duration-500"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
+            leave="transform transition ease-out duration-500"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
+          >
+            <Dialog.Panel
+              className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10">
+              <div className="flex items-center justify-between">
+                <Link to="/" className="-m-1.5 p-1.5">
+                  <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
+                  <Logo/>
+                </Link>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
+                </button>
               </div>
-              <div className="py-6">
-                <div className="space-y-2 py-6">
-                  {contactLinks.map((item) => (
-                    <a key={item.name} href={item.href} target="_blank"
-                       rel="noopener noreferrer">
-                      <span className="sr-only">{item.name}</span>
-                      <item.icon className="h-6 w-6" aria-hidden="true"/>
-                    </a>
-                  ))}
-                  <Email/>
+              <div className="mt-6 flow-root">
+                <div className="-my-6 divide-y divide-gray-500/10">
+                  <div className="space-y-2 py-6">
+                    {navigationLinks.map((item) => (
+                      <Link key={item.name} to={item.href}
+                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7">
+                        {item.name}
+                      </Link>
+                    ))}
+                    {<a href="../public/resume.pdf" download>Resume</a>}
+                  </div>
+                  <div className="py-6">
+                    <div className="space-y-2 py-6">
+                      {contactLinks.map((item) => (
+                        <a key={item.name} href={item.href} target="_blank"
+                           rel="noopener noreferrer">
+                          <span className="sr-only">{item.name}</span>
+                          <item.icon className="h-6 w-6" aria-hidden="true"/>
+                        </a>
+                      ))}
+                      <Email/>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
     </header>
   )
 }
