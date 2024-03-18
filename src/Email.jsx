@@ -15,9 +15,9 @@ const email = {
 
 export default function Email () {
   return (
-    <a key={email.name} href={email.href} className="enlarge">
+    <a key={email.name} href={email.href}>
       <span className="sr-only">{email.name}</span>
-      <email.icon className="h-6 w-6" aria-hidden="true"/>
+      <email.icon className="h-8 w-auto enlarge" aria-hidden="true"/>
     </a>
   )
 }

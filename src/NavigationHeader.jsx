@@ -1,12 +1,5 @@
 // TODO:
-// - Update navigation links
-// - Update styling (change mobile menu to have frosted glass effect like with projects
-// - Make mobile menu disappear?
-// - Fix padding around resume link in mobile menu
-// - Hide open menu button on mobile when menu is open
-// - Add progress bar for scrolling
-// - Make fonts and icons larger
-// - Change dialog to normal div for mobile menu
+// - Add animated burger menu icon
 
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
@@ -62,35 +55,36 @@ export default function NavigationHeader () {
   }, [])
 
   return (
-    <header className={`sticky top-0 z-10 transition-all ${isScrolled
+    <header className={`z-10 sticky top-0 transition-all ${isScrolled
       ? 'shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10'
       : ''}`}>
       <nav className="flex items-center justify-between p-6 lg:px-8"
            aria-label="Global">
         <div className="flex flex-1 justify-start">
-          <Link to="/" className="-m-1.5 p-1.5 enlarge">
+          <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge">
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
-            <Logo/>
+            <Logo height="h-14"/>
           </Link>
         </div>
         <div className="flex md:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 `}
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true"/>
+            <Bars3Icon className="h-8 w-auto" aria-hidden="true"/>
           </button>
         </div>
         <div className="hidden md:flex flex-1 justify-center gap-x-12">
           {navigationLinks.map((item) => (
             <Link key={item.name} to={item.href}
-                  className="text-sm font-semibold leading-6 underline">
+                  className="text-lg font-semibold underline">
               {item.name}
             </Link>
           ))}
-          {<a href="resume.pdf" download className="underline">Resume</a>}
+          {<a href="resume.pdf" download
+              className="text-lg font-semibold underline">Resume</a>}
         </div>
         <div className="hidden md:flex flex-1 justify-end">
           <div className="flex justify-center space-x-6 md:order-2">
@@ -98,7 +92,7 @@ export default function NavigationHeader () {
               <a key={item.name} href={item.href} target="_blank"
                  rel="noopener noreferrer" className="enlarge">
                 <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true"/>
+                <item.icon className="h-8 w-auto" aria-hidden="true"/>
               </a>
             ))}
             <Email/>
@@ -121,46 +115,45 @@ export default function NavigationHeader () {
             leaveTo="translate-x-full"
           >
             <Dialog.Panel
-              className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10">
-              <div className="flex items-center justify-between">
-                <Link to="/" className="-m-1.5 p-1.5">
+              className="fixed inset-y-0 w-full px-6 py-6 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 divide-y-2 divide-white/10 space-y-6">
+              <div className="flex items-center justify-between mb-4">
+                <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge">
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
-                  <Logo/>
+                  <Logo height="h-14"/>
                 </Link>
                 <button
                   type="button"
-                  className="-m-2.5 rounded-md p-2.5"
+                  className="-m-2.5 rounded-md p-2.5 enlarge"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
+                  <XMarkIcon className="h-8 w-auto" aria-hidden="true"/>
                 </button>
               </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    {navigationLinks.map((item) => (
-                      <Link key={item.name} to={item.href}
-                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7">
-                        {item.name}
-                      </Link>
-                    ))}
-                    {<a href="../public/resume.pdf" download>Resume</a>}
-                  </div>
-                  <div className="py-6">
-                    <div className="space-y-2 py-6">
-                      {contactLinks.map((item) => (
-                        <a key={item.name} href={item.href} target="_blank"
-                           rel="noopener noreferrer">
-                          <span className="sr-only">{item.name}</span>
-                          <item.icon className="h-6 w-6" aria-hidden="true"/>
-                        </a>
-                      ))}
-                      <Email/>
-                    </div>
-                  </div>
+              <ul className="px-2 divide-y-2 divide-white/10 space-y-6">
+                <div className="space-y-1 pt-6">
+                  {navigationLinks.map((item) => (
+                    <li key={item.name}><Link to={item.href}
+                                              className="text-2xl font-semibold underline">
+                      {item.name}
+                    </Link></li>
+                  ))}
+                  <li><a href="../public/resume.pdf" download
+                         className="text-2xl font-semibold underline">Resume</a>
+                  </li>
                 </div>
-              </div>
+                <div className="space-y-2 pt-6">
+                  {contactLinks.map((item) => (
+                    <li key={item.name}><a href={item.href} target="_blank"
+                                           rel="noopener noreferrer">
+                      <span className="sr-only">{item.name}</span>
+                      <item.icon className="h-8 w-auto enlarge"
+                                 aria-hidden="true"/>
+                    </a></li>
+                  ))}
+                  <li><Email/></li>
+                </div>
+              </ul>
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
