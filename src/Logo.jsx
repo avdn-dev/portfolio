@@ -1,6 +1,6 @@
 export default function Logo ({ height }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={`${height} w-auto`}
+    <svg xmlns="http://www.w3.org/2000/svg" className={`${height}`}
          zoomAndPan="magnify" viewBox="0 0 208.5 180.749999" height="241"
          preserveAspectRatio="xMidYMid meet" version="1.0" fill="#FFF">
       <defs>

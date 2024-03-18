@@ -1,12 +1,10 @@
-// TODO:
-// - Add animated burger menu icon
-
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './Logo.jsx'
 import { Link } from 'react-router-dom'
 import Email from './Email.jsx'
+import AnimatedMenuButton from './AnimatedMenuButton.jsx'
 
 const navigationLinks = [
   { name: 'Projects', href: 'projects' },
@@ -42,6 +40,8 @@ const contactLinks = [
 export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [closeMobileMenuIsHovered, setCloseMobileMenuIsHovered] = useState(
+    false)
 
   useEffect(() => {
     const checkScroll = () => {
@@ -55,11 +55,13 @@ export default function NavigationHeader () {
   }, [])
 
   return (
-    <header className={`z-10 sticky top-0 transition-all ${isScrolled
+    <header className={`isolate z-10 sticky top-0 transition-all ${isScrolled &&
+    !mobileMenuOpen
       ? 'shadow backdrop-blur bg-gray-800/10 ring-1 ring-white/10'
       : ''}`}>
-      <nav className="flex items-center justify-between p-6 lg:px-8"
-           aria-label="Global">
+      <nav
+        className="flex items-center justify-between p-6 lg:px-8 pr-8 md:pr-6"
+        aria-label="Global">
         <div className="flex flex-1 justify-start">
           <Link to="/" className={`-m-3 -mx-5 p-1.5 enlarge ${mobileMenuOpen
             ? 'opacity-0'
@@ -69,14 +71,9 @@ export default function NavigationHeader () {
           </Link>
         </div>
         <div className="flex md:hidden">
-          <button
-            type="button"
-            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 `}
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-8 w-auto" aria-hidden="true"/>
-          </button>
+          <AnimatedMenuButton mobileMenuOpen={mobileMenuOpen}
+                              setMobileMenuOpen={setMobileMenuOpen}
+                              isHovered={closeMobileMenuIsHovered}/>
         </div>
         <div className="hidden md:flex flex-1 justify-center gap-x-12">
           {navigationLinks.map((item) => (
@@ -116,9 +113,22 @@ export default function NavigationHeader () {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
+            <div
+              className="fixed inset-0 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 aria-hidden"/>
+          </Transition.Child>
+          <Transition.Child
+            as={Fragment}
+            enter="transform transition ease-out duration-500"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
+            leave="transform transition ease-out duration-500"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
+          >
             <Dialog.Panel
-              className="z-20 fixed inset-y-0 w-full px-6 py-6 shadow backdrop-blur bg-gray-800/30 ring-1 ring-white/10 divide-y-2 divide-white/10 space-y-6">
-              <div className="flex items-center justify-between mb-4">
+              className="z-10 fixed inset-y-0 w-full px-6 py-6 space-y-6">
+              <div
+                className="flex items-center justify-between mb-4">
                 <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
                       onClick={() => setMobileMenuOpen(false)}>
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
@@ -126,15 +136,18 @@ export default function NavigationHeader () {
                 </Link>
                 <button
                   type="button"
-                  className="-m-2.5 rounded-md p-2.5 enlarge"
                   onClick={() => setMobileMenuOpen(false)}
+                  onMouseEnter={() => setCloseMobileMenuIsHovered(true)}
+                  onMouseLeave={() => setCloseMobileMenuIsHovered(false)}
+                  className="mr-2 -mb-1"
                 >
                   <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-8 w-auto" aria-hidden="true"/>
+                  <XMarkIcon className="h-8 w-auto invisible"
+                             aria-hidden="true"/>
                 </button>
               </div>
               <ul className="px-2 divide-y-2 divide-white/10 space-y-6">
-                <div className="space-y-1 pt-6">
+                <div className="space-y-1 pt-6 border-t-2 border-t-white/10">
                   {navigationLinks.map((item) => (
                     <li key={item.name}><Link to={item.href}
                                               className="text-2xl font-semibold underline"
