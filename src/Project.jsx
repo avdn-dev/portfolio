@@ -14,7 +14,7 @@ export default function Project ({
   learnings,
 }) {
   return (
-    <main className="px-6 py-6 lg:px-8 lg:py-8 flex flex-col items-center">
+    <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-6xl">
         <section className="mb-16 flex flex-col gap-6">
           <h1 className="text-6xl mb-8 font-bold">

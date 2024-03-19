@@ -88,7 +88,7 @@ const interests = [
 
 export default function Info () {
   return (
-    <main className="px-6 py-6 lg:px-8 lg:py-8 flex flex-col items-center">
+    <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-7xl">
         <section
           className="mb-16 flex flex-col md:flex-row gap-10">
