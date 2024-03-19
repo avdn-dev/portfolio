@@ -27,8 +27,8 @@ export default function Project ({
                className="rounded-lg max-w-xl"/>
         </section>
 
-        <section className="mb-16 flex flex-col">
-          <h1 className="text-3xl mb-8 font-bold">
+        <section className="mb-8 flex flex-col">
+          <h1 className="text-3xl mb-4 font-bold">
             Technical details
           </h1>
           <p className="leading-7 mb-6">

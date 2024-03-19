@@ -197,8 +197,8 @@ export default function Info () {
           </div>
         </section>
 
-        <section className="mb-16">
-          <h1 className="text-3xl mb-8 font-bold">
+        <section className="mb-8">
+          <h1 className="text-3xl mb-4 font-bold">
             Tools and technologies
           </h1>
           <InfiniteScrollingTechnologies technologies={technologies}/>
@@ -208,7 +208,7 @@ export default function Info () {
           <h1 className="text-3xl mb-8 font-bold">
             My interests
           </h1>
-          <p className="leading-7 mb-8">
+          <p className="leading-7 mb-6">
             Now that the professional introduction is over, here&apos;s what I
             do besides work.
           </p>
