@@ -15,13 +15,13 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
       className="overflow-hidden relative h-56 pt-2 xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] xl:m-0 -mx-8">
       <div
         className="technologies-carousel-track absolute flex ">
-        {duplicatedTechnologies.map((technology) => (
+        {duplicatedTechnologies.map((technology, index) => (
           <div
             className="w-48 h-48 flex flex-col justify-center items-center transition-all duration-500 ease-in-out transform hover:scale-105"
-            onMouseEnter={() => setHoveredTechnology(technology)}
+            onMouseEnter={() => setHoveredTechnology(index)}
             onMouseLeave={() => setHoveredTechnology(null)}>
             <img src={technology.image} alt={technology.name}></img>
-            {hoveredTechnology === technology && (
+            {hoveredTechnology === index && (
               <div
                 className="absolute font-semibold w-full h-full bg-gray-800/10 rounded-xl backdrop-blur flex justify-center items-center shadow">
                 {technology.name}
