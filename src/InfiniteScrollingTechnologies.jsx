@@ -12,7 +12,7 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
 
   return (
     <div
-      className="overflow-hidden relative h-56 pt-2 xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] xl:m-0 -mx-8">
+      className="overflow-hidden relative h-56 pt-2 xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] xl:m-0 -mx-6">
       <div
         className="technologies-carousel-track absolute flex ">
         {duplicatedTechnologies.map((technology, index) => (
