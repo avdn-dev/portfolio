@@ -2,6 +2,7 @@
 // - Change photos displayed
 // - Add a quick link for each github repo
 // - Add transitions for cards
+// - Make grid 2x2 on desktop breakpoint
 
 import { Link } from 'react-router-dom'
 import projects from './projects.js'
@@ -21,7 +22,7 @@ export default function Projects () {
             <h2
               className="text-2xl mt-4 mb-2 font-medium sm:mt-6 sm:mb-3 lg:mt-8 lg:mb-4">{project.name}</h2>
             <p
-              className="mb-4 mx-4 text-left sm:text-lg sm:mb-6 sm:mx-6 lg:mb-8 lg:mx-8">{/*project.description*/}{'Under development.'}</p>
+              className="mb-4 mx-4 text-left sm:text-lg sm:mb-6 sm:mx-6 lg:mb-8 lg:mx-8">{project.summary}</p>
           </div>
         </Link>
       ))}

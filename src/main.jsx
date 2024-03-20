@@ -25,6 +25,7 @@ const router = createBrowserRouter(
         {projects.map(project => (
           <Route path={project.route} element={<Project name={project.name}
                                                         description={project.description}
+                                                        hasPicture={project.hasPicture}
                                                         picture={project.picture}
                                                         details={project.details}
                                                         technologies={project.technologies}
