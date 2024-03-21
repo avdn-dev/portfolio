@@ -63,7 +63,7 @@ export default function Hero () {
                 : 'censor-animate-end'}`}>&nbsp;
           </span>
       </p>
-      <div className="mt-10 sm:mt-12 flex items-center justify-center">
+      <div className="mt-10 sm:mt-12">
         <Link to="projects"
               className="text-lg sm:text-xl font-semibold underline">
           See my work <span aria-hidden="true">→</span>
