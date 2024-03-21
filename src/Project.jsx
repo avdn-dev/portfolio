@@ -1,7 +1,5 @@
 // TODO:
 // - Add in carousel for pictures
-// - Add project code link
-// - Add transition for project
 
 import InfiniteScrollingTechnologies from './InfiniteScrollingTechnologies.jsx'
 

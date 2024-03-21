@@ -1,0 +1,8 @@
+- Learn shader to rewrite canvas background
+- Optimise website using Lighthouse audit
+- Add p5.js as npm package
+- Update animations for low motion mode
+- Carry out accessibility audit
+- Add page transitions
+- Add themes for gradients
+- Add more pictures/video on info page

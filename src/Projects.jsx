@@ -1,7 +1,6 @@
 // TODO:
 // - Change photos displayed
 // - Add a quick link for each github repo
-// - Add transitions for cards
 // - Make grid 2x2 on desktop breakpoint
 
 import { Link } from 'react-router-dom'
