@@ -51,16 +51,17 @@ export default function Hero () {
         Hi, I'm Anh!
       </h1>
       <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-8">
-        {'I\'m a third year computer science student with experience in '}
+        {'I\'m a final year computer science student with experience in '}
+        <br/>
         <span
-          className={`relative inline-block w-32 sm:w-36 text-left`}>
+          className={`relative w-32 sm:w-36`}>
                           {area}
-          <span ref={spanRef}
-                className={`absolute left-0 censor w-32 sm:w-36 ${animate
-                  ? 'censor-animate-start'
-                  : 'censor-animate-end'}`}>&nbsp;
-          </span>
         </span>
+        <span ref={spanRef}
+              className={`censor absolute left-[50%] transform translate-x-[-50%] w-32 sm:w-36 ${animate
+                ? 'censor-animate-start'
+                : 'censor-animate-end'}`}>&nbsp;
+          </span>
       </p>
       <div className="mt-10 sm:mt-12 flex items-center justify-center">
         <Link to="projects"
