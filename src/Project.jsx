@@ -13,14 +13,22 @@ export default function Project ({
   details,
   technologies,
   learnings,
+  github,
 }) {
   return (
     <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-6xl">
         <section className="mb-16 flex flex-col">
-          <h1 className="text-6xl mb-12 font-bold">
+          <h1 className="text-6xl mb-4 font-bold">
             {name}
           </h1>
+          <div><a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'underline' }}
+            className="text-3xl font-bold enlarge mb-12 inline-block">Github</a>
+          </div>
           {name === 'Journey Genie' &&
             <p className="leading-7">This is a full stack project that
               leverages real-time weather data and location services to generate

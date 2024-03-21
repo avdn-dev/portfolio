@@ -30,6 +30,7 @@ const router = createBrowserRouter(
                                                         details={project.details}
                                                         technologies={project.technologies}
                                                         learnings={project.learnings}
+                                                        github={project.github}
           />}/>
 
         ))}

@@ -45,7 +45,7 @@ const projects = [
         description: 'Creating an aesthetic website was just as important as creating a functional one since I wanted to showcase my skills in design as well as development. Rather than designing on the fly I used Figma to create a prototype of the website - following a design system made development significantly easier.',
       },
     ],
-    github: '',
+    github: 'https://github.com/4nhus/portfolio',
   },
   {
     name: 'Eye Empathise',
@@ -85,7 +85,7 @@ const projects = [
         description: 'At first, I was processing the image pipeline with the main actor, but this was causing the UI to become unresponsive at times since the processing occurred during interactions. Pushing the processing onto an alternate actor fixed this performance issue.',
       },
     ],
-    github: '',
+    github: 'https://github.com/4nhus/eye-empathise',
   },
   {
     name: 'Account Service',
@@ -137,7 +137,7 @@ const projects = [
         description: 'JUnit and Mockito were employed to write unit, integration, and tests. This involved testing business logic, mocking dependencies, and ensuring the service was reliable upon restarts. Having a robust test suite was very beneficial when adding new functionality and refactoring.',
       },
     ],
-    github: '',
+    github: 'https://github.com/4nhus/account-service',
   },
   {
     name: 'Journey Genie',
@@ -173,7 +173,7 @@ const projects = [
         description: 'As a team of 4 against teams of 6, we were limited in our project scope. Team frontend experience was also limited as I was the only one with mobile development experience. Effective communication, coordination, and delegation were hence crucial to completing the project within the timeframe. To develop features simultaneously we utilised Git and Github, and performed asynchronous reviews as team member availabilities were erratic.',
       },
     ],
-    github: '',
+    github: 'https://github.com/4nhus/journey-genie',
   },
 ]
 
