@@ -8,12 +8,11 @@ const stats = [
   { label: 'University students tutored', value: '100+' },
   { label: 'Year 12 students tutored with band 6 result', value: '10+' },
   {
-    label: 'Average student satisfaction on 6 point Lickert scale',
+    label: 'Average student satisfaction on 6 point Likert scale',
     value: '5.6/6',
   },
   { label: 'Pages of aesthetic medicine consulting written', value: '2000+' },
   { label: 'Grocery items stocked', value: '1000+' },
-  { label: 'Programming languages used in depth', value: '6' },
   { label: 'Projects completed', value: '40+' },
   { label: 'Course certificates obtained', value: '20+' },
 ]
@@ -57,7 +56,7 @@ const interests = [
   {
     name: 'Piano',
     description:
-      'I learned my first instrument - the violin - by following the Suzuki method. For years I only learnt how to perform, with zero understanding of music theory. I started piano to learn music theory and for more versatility in music creation.',
+      'I learned my first instrument - the violin - with the Suzuki method. For years I only learnt how to perform, with zero understanding of music theory. I started piano to learn music theory and for more versatility in music creation.',
   },
   {
     name: 'Guitar',
@@ -77,12 +76,12 @@ const interests = [
   {
     name: 'Reading',
     description:
-      'For my personal growth in university I delved into the self-improvement and psychology genres of non-fiction. Between those genres and now computer-science related readings, I never read fiction - I\'m now keen for fiction recommendations!',
+      'For my personal growth in university I delved into the self-improvement and psychology genres of non-fiction. Between those genres and now computer-science related readings, I never read fiction, though I\'m now keen for fiction recommendations!',
   },
   {
     name: 'Calisthenics',
     description:
-      'Initially a firm believer in the church of iron, I never thought I could seriously train in calisthenics. I decided to try writing my own calisthenics program since we had a pull up bar in the backyard, and stuck with it when my first calisthenics workout gave me the best pump I\'ve ever had.',
+      'Initially a firm believer in the church of iron, I never thought I could seriously train in calisthenics. I tried writing my own calisthenics program since we had a pull up bar in the backyard, and stuck with it when my first calisthenics workout gave me the best pump I had ever had.',
   },
 ]
 
@@ -90,41 +89,37 @@ export default function Info () {
   return (
     <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-7xl">
+        <h1 className="text-6xl mb-12 font-bold">
+          About me
+        </h1>
         <section
           className="mb-16 flex flex-col md:flex-row gap-10">
           <div className="flex-1 flex flex-col justify-center">
-            <h1 className="text-3xl mb-8 font-bold">
+            <h2 className="text-3xl mb-8 font-bold">
               My background
-            </h1>
+            </h2>
             <p className="leading-7">
-              I started my tertiary education journey in 2018 at the
-              University of Queensland, studying a bachelors of biomedical
-              science with provisional entry into the doctor of
-              medicine. Originally from Sydney, moving interstate by myself was
-              a huge milestone in my personal growth. As much as I enjoyed it
-              though, my goal was transferring to a medicine program in Sydney.
-              I wanted to complete the lengthy degree(s) at home with family and
-              friends, and without the pressure of supporting myself interstate.
-              At the start of 2019 I was accepted into the medicine program at
-              the University of New South Wales (UNSW) with an immediate start.
-              At the time I thought I was just at the beginning of a long career
-              in medicine.</p>
+              Originally from Sydney, I moved to Brisbane and started a
+              bachelors of biomedical science at the University of Queensland at
+              the start of 2018, with provisional entry into the doctor of
+              medicine. While this was a big milestone in my personal growth, my
+              goal was transferring to a medicine program back home in Sydney -
+              a year later I was accepted into the medicine program at the
+              University of New South Wales (UNSW). At the time I thought I was
+              just at the beginning of a long career in medicine.</p>
             <br/>
             <p className="leading-7">
-              Come 2021, I realised that a professional career in
-              medicine ultimately didn&apos;t align with my long term plans.
-              Leaving medicine was a very difficult decision to make, as I had
-              to forego pressure from family and escape the the sunk cost
-              fallacy. Reevaluating what I wanted to study lead me to starting a
-              computer science degree at UNSW in 2022, as I was already very
-              passionate about technology and enjoyed problem solving, logical
-              thinking, and constantly learning. Ironically I never even
-              considered studying computer science out of high school, despite
-              my affinity for it. It&apos;s very clear to me that I made
-              the right choice - I enjoy every aspect of my computer science
-              degree, and am beyond keen to start my career. I&apos;m grateful
-              to be truly passionate about this field, and owe much to the
-              unending support my partner has given throughout my studies
+              Come 2021, I realised that a professional career in medicine
+              ultimately didn&apos;t align with my long term plans. Leaving
+              medicine was a very difficult decision to make, given pressure
+              from family and the sunk cost fallacy. Reevaluation lead me to
+              starting a bachelors of computer science at UNSW in 2022, as I was
+              already very passionate about technology and enjoyed problem
+              solving, and constant applied learning. Looking back, it&apos;s
+              very clear that I made the right choice - I enjoy every aspect of
+              my computer science degree, and am very keen to start my career.
+              I&apos;m grateful to be truly passionate about this field, and owe
+              much to the unending support my partner of my partner
               (shout out to Madison).
             </p>
           </div>
@@ -133,41 +128,31 @@ export default function Info () {
         </section>
 
         <section className="mb-16 flex flex-col">
-          <h1 className="text-3xl mb-8 font-bold">
+          <h2 className="text-3xl mb-8 font-bold">
             My experience
-          </h1>
+          </h2>
           <div className="flex flex-col md:flex-row gap-10">
             <div className="flex-1">
               <p className="leading-7">
-                Outside the realm of computer science I&apos;ve had several jobs
-                -
-                from private tutoring, to writing for a boutique aesthetics
-                consultancy, to working as a day fill team member at my local
-                Coles. Across the board I&apos;ve developed strong communication
-                skills - both written and verbal - that I leverage to understand
-                and engage with any audience.
+                Outside of studying computer science I&apos;ve been a private
+                tutor, a writer for a boutique aesthetics consultancy, and a day
+                fill team member at my local Coles. I&apos;m currently a casual
+                academic at UNSW, tutoring fundamental courses in the computer
+                science faculty. In this role I&apos;ve been able to utilise my
+                experience in tutoring, writing, and mentoring to help students
+                understand course materials and develop their own problem
+                solving skills. It&apos;s been very fulfilling for me as it
+                cements the effort I&apos;ve put into learning course content
+                deeply, helping others achieve the same.
               </p>
               <br/>
               <p className="leading-7">
-                Most recently I&apos;ve been
-                working as a casual academic at UNSW, tutoring fundamental
-                courses in the computer science faculty. In this role I&apos;ve
-                been able to utilise my experience in tutoring, communicating,
-                and mentoring to help students understand course materials and
-                develop their own problem solving skills. This role has been
-                very fulfilling for me as it cements the effort I&apos;ve put
-                into learning course content deeply, while helping others
-                achieve the same.
-              </p>
-              <br/>
-              <p className="leading-7">
-                Outside of university and work I&apos;ve been up-skilling in
-                full
-                stack development, exploring:
+                Outside of study and work I&apos;ve been up-skilling in
+                full stack development, exploring:
                 <br/>
-                - Mobile development via iOS apps built with Swift,
-                SwiftUI, and other core Apple technologies like MapKit, Core
-                Image
+                - Mobile development via iOS applications built with Swift,
+                SwiftUI, and other core Apple technologies like Core Data, Swift
+                Data, MapKit and Core Image
                 <br/>
                 - Backend development via servers for RESTful APIs built with
                 Java, Spring Boot, and relational databases
@@ -179,10 +164,9 @@ export default function Info () {
               <p className="leading-7">
                 Full disclosure, the stats provided are padded by
                 projects I did for the sake of fully completing some
-                certifications (among other things...) - they weren&apos;t
-                difficult but did serve as good practice. I&apos;m aware that I
-                look like a corrupt general who gave himself a bunch of medals
-                😂.
+                certifications - they weren&apos;t difficult but did serve as
+                good practice. I&apos;m aware that I look like a corrupt
+                dictatorship general who gave himself a bunch of medals 😂.
               </p>
             </div>
             <div
@@ -198,16 +182,16 @@ export default function Info () {
         </section>
 
         <section className="mb-8">
-          <h1 className="text-3xl mb-4 font-bold">
+          <h2 className="text-3xl mb-4 font-bold">
             Tools and technologies
-          </h1>
+          </h2>
           <InfiniteScrollingTechnologies technologies={technologies}/>
         </section>
 
         <section>
-          <h1 className="text-3xl mb-8 font-bold">
+          <h2 className="text-3xl mb-8 font-bold">
             My interests
-          </h1>
+          </h2>
           <p className="leading-7 mb-6">
             Now that the professional introduction is over, here&apos;s what I
             do besides work.
