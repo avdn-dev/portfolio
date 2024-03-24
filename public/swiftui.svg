@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+	<g transform="scale(1.35) translate(-6, -6)">
+        <g id="Layer_10" style="display:none;">
+		<g style="display:inline;opacity:0.05;">
+			<g>
+				<circle style="fill:#FFFFFF;" cx="24" cy="24" r="19.5"/>
+                <path d="M24,5c10.477,0,19,8.523,19,19s-8.523,19-19,19S5,34.477,5,24S13.523,5,24,5 M24,4C12.954,4,4,12.954,4,24
+					s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4L24,4z"/>
+			</g>
+            <g>
+				<rect x="6.5" y="6.5" style="fill:#FFFFFF;" width="35" height="35"/>
+                <path d="M41,7v34H7V7H41 M42,6H6v36h36V6L42,6z"/>
+			</g>
+		</g>
+	</g>
+        <g id="filled">
+	</g>
+        <g id="outlined">
+	</g>
+        <g id="rounded">
+	</g>
+        <g id="two_x5F_tone">
+	</g>
+        <g id="sharp">
+	</g>
+        <g id="win10">
+	</g>
+        <g id="ios_x5F_out">
+	</g>
+        <g id="ios_x5F_filled">
+
+			<radialGradient id="SVGID_1_" cx="23.9412" cy="4.4118" r="54.3985"
+                            gradientTransform="matrix(1 0 0 0.6044 0 1.7452)" gradientUnits="userSpaceOnUse">
+			<stop offset="0.2023" style="stop-color:#27F5F1"/>
+                <stop offset="0.2899" style="stop-color:#25E2EE"/>
+                <stop offset="0.4676" style="stop-color:#20B1E7"/>
+                <stop offset="0.7169" style="stop-color:#1963DB"/>
+                <stop offset="0.8569" style="stop-color:#1434D4"/>
+                <stop offset="1" style="stop-color:#0015B5"/>
+		</radialGradient>
+            <path style="fill:url(#SVGID_1_);" d="M34.249,42H13.751C9.47,42,6,38.53,6,34.249v-10.78L21,6h13.248C38.53,6,42,9.47,42,13.751
+			v20.497C42,38.53,38.53,42,34.249,42z"/>
+            <path style="fill:#1A5CF9;" d="M21,6L6,23.469c4.325,5.751,14.813,9.78,21.688,3.468c4-5,1.688-13.188-1.313-15.875
+			C24.868,9.712,23.064,7.77,21,6z"/>
+            <path style="fill:#21AAF5;" d="M21,6L6,21.683v1.786c5.079,3.953,13.005,5.51,18.563,0.406c4-5,1.688-13.188-1.313-15.875
+			C22.613,7.43,21.848,6.735,21,6z"/>
+            <path style="fill:#25E0F2;" d="M6,18.477v3.206c4.686,1.975,10.315,1.966,14.563-1.933C23.787,15.72,23.033,9.622,21,6h-3.15
+			L6,18.477z"/>
+            <path style="fill:#18FFFF;" d="M13.751,6C9.47,6,6,9.47,6,13.751v4.726c3.476,0.382,7.055-0.459,9.979-3.144
+			c2.119-2.649,2.46-6.188,1.871-9.333H13.751z"/>
+            <path d="M12.608,14.87c0,0,6.833,10.327,12.578,13.82c-2.174,0.699-6.894,3.555-15.124-1.492c2.096,2.873,5.807,8.635,14.891,8.092
+			c3.183-0.155,5.124-1.165,6.91-1.863c1.786-0.698,3.494-0.621,4.969,2.019c0.311-2.407,0.388-4.659-2.096-7.221
+			c0,0,2.456-9.363-8.001-16.751c2.174,4.348,3.433,6.8,2.411,12.791c-2.329-1.553-10.931-8.48-12.872-10.732
+			c1.398,2.485,5.419,7.936,6.816,9.334C20.606,21.159,12.608,14.87,12.608,14.87z"/>
+	</g>
+        <g id="color">
+	</g></g>
+</svg>

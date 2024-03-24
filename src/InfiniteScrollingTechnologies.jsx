@@ -6,13 +6,13 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
 
   // Duplicate the technologies to make the carousel "infinite"
   const duplicatedTechnologies = Array.from({ length: duplications },
-    () => technologies).flat()
+    () => technologies).flat().reverse()
 
   const [hoveredTechnology, setHoveredTechnology] = useState(null)
 
   return (
     <div
-      className="overflow-hidden relative h-56 pt-2 xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] xl:m-0 -mx-6">
+      className="overflow-hidden relative h-56 pt-2 xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] xl:m-0 -mx-6 lg:-mx-8">
       <div
         className="technologies-carousel-track absolute flex ">
         {duplicatedTechnologies.map((technology, index) => (
@@ -20,10 +20,12 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
             className="w-48 h-48 flex flex-col justify-center items-center transition-all duration-500 ease-in-out transform hover:scale-105"
             onMouseEnter={() => setHoveredTechnology(index)}
             onMouseLeave={() => setHoveredTechnology(null)}>
-            <img src={technology.image} alt={technology.name}></img>
+            <img src={`${import.meta.env.BASE_URL + technology.image}`}
+                 alt={technology.name}
+                 className="technology"/>
             {hoveredTechnology === index && (
               <div
-                className="absolute font-semibold w-full h-full bg-gray-800/10 rounded-xl backdrop-blur flex justify-center items-center shadow">
+                className="absolute font-lg font-bold w-full h-full bg-gray-800/20 rounded-xl backdrop-blur flex justify-center items-center shadow">
                 {technology.name}
               </div>
             )}
@@ -42,8 +44,8 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
         }
 
         .technologies-carousel-track {
-          /* Length is num cards * 4 */
-          animation: slide ${technologies.length * 4}s linear infinite;
+          /* Length is num cards * 2.5 */
+          animation: slide ${technologies.length * 2.5}s linear infinite;
         }
 
         .technologies-carousel-track:hover {

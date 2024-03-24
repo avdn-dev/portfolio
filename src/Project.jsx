@@ -14,8 +14,8 @@ export default function Project ({
   github,
 }) {
   return (
-    <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
-      <div className="max-w-6xl">
+    <main className="px-6 py-6 lg:px-8 flex flex-grow flex-col items-center">
+      <div className="max-w-7xl">
         <section className="mb-16 flex flex-col">
           <h1 className="text-6xl mb-4 font-bold">
             {name}

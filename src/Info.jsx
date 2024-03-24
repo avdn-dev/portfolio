@@ -19,36 +19,144 @@ const stats = [
 
 const technologies = [
   {
-    name: 'Tech 1',
-    image: 'https://via.placeholder.com/150',
+    name: 'Swift',
+    image: 'swift.svg',
   },
   {
-    name: 'Tech 2',
-    image: 'https://via.placeholder.com/150',
+    name: 'Java',
+    image: 'java.svg',
   },
   {
-    name: 'Tech 3',
-    image: 'https://via.placeholder.com/150',
+    name: 'JavaScript',
+    image: 'javascript.svg',
   },
   {
-    name: 'Tech 4',
-    image: 'https://via.placeholder.com/150',
+    name: 'HTML',
+    image: 'html.svg',
   },
   {
-    name: 'Tech 5',
-    image: 'https://via.placeholder.com/150',
+    name: 'CSS',
+    image: 'css.svg',
   },
   {
-    name: 'Tech 6',
-    image: 'https://via.placeholder.com/150',
+    name: 'Python',
+    image: 'python.svg',
   },
   {
-    name: 'Tech 7',
-    image: 'https://via.placeholder.com/150',
+    name: 'SwiftUI',
+    image: 'swiftui.svg',
   },
   {
-    name: 'Tech 8',
-    image: 'https://via.placeholder.com/150',
+    name: 'UIKit',
+    image: 'uikit.svg',
+  },
+  {
+    name: 'Spring',
+    image: 'spring.svg',
+  },
+  {
+    name: 'Spring Framework',
+    image: 'spring-framework.svg',
+  },
+  {
+    name: 'React.js',
+    image: 'react.svg',
+  },
+  {
+    name: 'p5.js',
+    image: 'p5.svg',
+  },
+  {
+    name: 'Tailwind CSS',
+    image: 'tailwind.svg',
+  },
+  {
+    name: 'React Router',
+    image: 'react-router.svg',
+  },
+  {
+    name: 'Spring Boot',
+    image: 'spring-boot.svg',
+  },
+  {
+    name: 'Spring Data',
+    image: 'spring-data.svg',
+  },
+  {
+    name: 'Spring Security',
+    image: 'spring-security.svg',
+  },
+  {
+    name: 'Flask',
+    image: 'flask.svg',
+  },
+  {
+    name: 'npm',
+    image: 'npm.svg',
+  },
+  {
+    name: 'Vite',
+    image: 'vite.svg',
+  },
+  {
+    name: 'Gradle',
+    image: 'gradle.svg',
+  },
+  {
+    name: 'JUnit 5',
+    image: 'junit.svg',
+  },
+  {
+    name: 'Mockito',
+    image: 'mockito.svg',
+  },
+  {
+    name: 'Jackson',
+    image: 'jackson.svg',
+  },
+  {
+    name: 'Project Lombok',
+    image: 'lombok.svg',
+  },
+  {
+    name: 'Git',
+    image: 'git.svg',
+  },
+  {
+    name: 'GitHub',
+    image: 'github.svg',
+  },
+  {
+    name: 'Github Actions',
+    image: 'github-actions.svg',
+  },
+  {
+    name: 'Xcode',
+    image: 'xcode.svg',
+  },
+  {
+    name: 'IntelliJ IDEA',
+    image: 'intellij-idea.svg',
+  },
+  {
+    name: 'WebStorm',
+    image: 'webstorm.svg',
+  },
+  {
+    name: 'PyCharm',
+    image: 'pycharm.svg',
+  },
+  {
+    name: 'Figma',
+    image: 'figma.svg',
+  },
+  {
+    name: 'VoiceOver',
+    image: 'voiceover.svg',
+  },
+  {
+    name: 'OpenAI API',
+    image: 'openai.svg',
   },
 ]
 
