@@ -1,7 +1,3 @@
-// TODO:
-// - Replace placeholder image and alt text for it
-// - Add technologies
-
 import InfiniteScrollingTechnologies from './InfiniteScrollingTechnologies.jsx'
 
 const stats = [
