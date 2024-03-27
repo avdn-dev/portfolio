@@ -194,7 +194,7 @@ export default function Info () {
     <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-7xl">
         <section
-          className="mb-16 flex flex-col info:flex-row gap-10 h-max">
+          className="mb-16 flex flex-col info:flex-row gap-10">
           <div className="flex-1 flex flex-col">
             <h1 className="text-6xl mb-12 font-bold">
               About me
@@ -231,7 +231,7 @@ export default function Info () {
             className="flex-1"><img
             src="picture.jpeg"
             alt="Anh and his partner Madison in front of a waterfall"
-            className="rounded-lg h-full info-lg:h-[648px] info-xl:h-[620px] info-2xl:h-[592px] object-cover"/>
+            className="rounded-lg w-full h-full info-lg:h-[648px] info-xl:h-[620px] info-2xl:h-[592px] object-cover"/>
           </div>
         </section>
 
