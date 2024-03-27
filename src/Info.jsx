@@ -197,52 +197,56 @@ export default function Info () {
   return (
     <main className="px-6 py-6 lg:px-8 flex flex-col items-center">
       <div className="max-w-7xl">
-        <h1 className="text-6xl mb-12 font-bold">
-          About me
-        </h1>
         <section
-          className="mb-16 flex flex-col md:flex-row gap-10">
-          <div className="flex-1 flex flex-col justify-center">
+          className="mb-16 flex flex-col info:flex-row gap-10 h-max">
+          <div className="flex-1 flex flex-col">
+            <h1 className="text-6xl mb-12 font-bold">
+              About me
+            </h1>
             <h2 className="text-3xl mb-8 font-bold">
               My background
             </h2>
             <p className="leading-7">
-              Originally from Sydney, I moved to Brisbane and started a
-              bachelors of biomedical science at the University of Queensland at
-              the start of 2018, with provisional entry into the doctor of
-              medicine. While this was a big milestone in my personal growth, my
-              goal was transferring to a medicine program back home in Sydney -
-              a year later I was accepted into the medicine program at the
-              University of New South Wales (UNSW). At the time I thought I was
-              just at the beginning of a long career in medicine.</p>
+              In 2018 I moved from Sydney to Brisbane to start a bachelors of
+              biomedical science at the University of Queensland, with
+              provisional entry into the doctor of medicine. Although living
+              interstate by myself drove my personal growth tremendously, my
+              goal was to transfer to a medicine program back home in Sydney.
+              In 2019 I was successful in being accepted into medicine
+              at the University of New South Wales (UNSW). At the time I thought
+              I was just at the beginning of a long career in medicine.</p>
             <br/>
             <p className="leading-7">
-              Come 2021, I realised that a professional career in medicine
-              ultimately didn&apos;t align with my long term plans. Leaving
-              medicine was a very difficult decision to make, given pressure
-              from family and the sunk cost fallacy. Reevaluation lead me to
-              starting a bachelors of computer science at UNSW in 2022, as I was
-              already very passionate about technology and enjoyed problem
-              solving, and constant applied learning. Looking back, it&apos;s
-              very clear that I made the right choice - I enjoy every aspect of
-              my computer science degree, and am very keen to start my career.
-              I&apos;m grateful to be truly passionate about this field, and owe
-              much to the unending support my partner of my partner
-              (shout out to Madison).
+              Come 2021, I realised that a career in medicine
+              didn&apos;t align with my long term plans. I made the difficult
+              decision to leave medicine, with pressure from family and a
+              massive sunk cost fallacy. Reevaluation lead me to starting a
+              bachelors of computer science at UNSW in 2022, as I was already
+              very passionate about technology and enjoyed problem solving and
+              constant applied learning. Looking back, it&apos;s clear that I
+              made the right choice - I enjoy every aspect of my computer
+              science degree, and am very keen to start my career in a field
+              I&apos;m truly passionate about. I&apos;m nothing but grateful for
+              the way things turned out, and for the unending support of my
+              partner (shout out to Madison).
             </p>
           </div>
-          <img src="https://via.placeholder.com/150" alt=""
-               className="flex-1 rounded-lg max-w-xl"/>
+          <div
+            className="flex-1"><img
+            src="picture.jpeg"
+            alt="Anh and his partner Madison in front of a waterfall"
+            className="rounded-lg h-full info-lg:h-[648px] info-xl:h-[620px] info-2xl:h-[592px] object-cover"/>
+          </div>
         </section>
 
         <section className="mb-16 flex flex-col">
           <h2 className="text-3xl mb-8 font-bold">
             My experience
           </h2>
-          <div className="flex flex-col md:flex-row gap-10">
-            <div className="flex-1">
+          <div className="flex flex-col info:flex-row gap-10">
+            <div className="flex flex-col flex-1">
               <p className="leading-7">
-                Outside of studying computer science I&apos;ve been a private
+                Besides a computer science student, I&apos;ve been a private
                 tutor, a writer for a boutique aesthetics consultancy, and a day
                 fill team member at my local Coles. I&apos;m currently a casual
                 academic at UNSW, tutoring fundamental courses in the computer
@@ -278,7 +282,7 @@ export default function Info () {
               </p>
             </div>
             <div
-              className="flex-1 flex flex-col justify-between gap-6 ">
+              className="info-md:flex-1 grid grid-cols-1 sm:grid-cols-2 info:flex info:flex-col info:justify-between gap-6 info:gap-0">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="text-lg font-medium">{stat.label}</dt>
