@@ -60,7 +60,7 @@ export default function NavigationHeader () {
 
   return (
     <header className={`isolate z-10 sticky top-0 transition-all ${isScrolled
-      ? 'shadow backdrop-blur border-b-1 border-b-white/10'
+      ? 'shadow backdrop-blur bg-gray-800/20 border-b-1 border-b-white/10'
       : ''}`}>
       <nav
         className="flex items-center justify-between p-6 lg:px-8 pr-8 md:pr-6"
@@ -115,7 +115,7 @@ export default function NavigationHeader () {
             leaveTo="translate-x-full"
           >
             <div
-              className="fixed inset-0 backdrop-blur bg-gray-800/30 aria-hidden"/>
+              className="fixed inset-0 backdrop-blur bg-gray-800/40 aria-hidden"/>
           </Transition.Child>
           <Transition.Child
             as={Fragment}
