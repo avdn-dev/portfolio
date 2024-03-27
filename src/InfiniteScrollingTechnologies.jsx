@@ -17,6 +17,7 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
         className="technologies-carousel-track absolute flex ">
         {duplicatedTechnologies.map((technology, index) => (
           <div
+            key={index}
             className="w-48 h-48 flex flex-col justify-center items-center transition-all duration-500 ease-in-out transform hover:scale-105"
             onMouseEnter={() => setHoveredTechnology(index)}
             onMouseLeave={() => setHoveredTechnology(null)}>

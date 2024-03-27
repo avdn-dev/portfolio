@@ -11,8 +11,7 @@ export default function AnimatedMenuButton ({
         : ''}`}
       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
     >
-      <input type="checkbox"
-             checked={mobileMenuOpen}/>
+      <input type="checkbox" checked={mobileMenuOpen} onChange={() => {}}/>
       <span aria-hidden="true"></span>
       <span className="sr-only">Open main menu</span>
       <style jsx>{`
