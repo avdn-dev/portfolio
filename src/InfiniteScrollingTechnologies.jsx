@@ -40,7 +40,7 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
             left: ${-technologies.length * 192}px;
           }
           100% {
-            left: 0%;
+            left: 0;
           }
         }
 

@@ -53,7 +53,7 @@ export default function AnimatedMenuButton ({
           height: 2px;
           background: #fff;
           top: -12px;
-          right: 0px;
+          right: 0;
           transition: all 0.3s;
         }
 
