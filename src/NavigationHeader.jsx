@@ -47,6 +47,11 @@ export default function NavigationHeader () {
   const [logoIsHovered, setLogoIsHovered] = useState(
     false)
 
+  const clickMobileMenu = () => {
+    body.scrollTop = 0
+    setMobileMenuOpen(false)
+  }
+
   useEffect(() => {
     const checkScroll = () => {
       setIsScrolled(body.scrollTop > 0)
@@ -131,7 +136,7 @@ export default function NavigationHeader () {
               <div
                 className="flex items-center justify-between mb-4">
                 <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={clickMobileMenu}
                       onMouseEnter={() => setLogoIsHovered(true)}
                       onMouseLeave={() => setLogoIsHovered(false)}>
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
@@ -140,7 +145,7 @@ export default function NavigationHeader () {
                 </Link>
                 <button
                   type="button"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={clickMobileMenu}
                   onMouseEnter={() => setCloseMobileMenuIsHovered(true)}
                   onMouseLeave={() => setCloseMobileMenuIsHovered(false)}
                   className="mr-2 -mb-1"

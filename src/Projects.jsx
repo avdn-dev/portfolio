@@ -6,6 +6,8 @@
 import { Link } from 'react-router-dom'
 import projects from './projects.js'
 
+const body = document.querySelector('body')
+
 export default function Projects () {
   return (
     <ul role="list"
@@ -13,7 +15,8 @@ export default function Projects () {
       {projects.map(project => (
         <Link to={project.route}
               className="min-w-96 sm:min-w-72  col-span-1 flex overflow-hidden max-w-mbd flex-col divide-y rounded-lg text-center shadow backdrop-blur bg-gray-800/20 ring-1 ring-white/10 transition-all duration-500 ease-in-out transform hover:scale-105 hover:ring-2 hover:ring-white"
-              key={project.name}>
+              key={project.name}
+              onClick={() => {body.scrollTop = 0}}>
           <div className="flex flex-1 flex-col">
             <img className="mx-auto w-full"
                  src={project.picture}
