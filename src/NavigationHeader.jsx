@@ -37,6 +37,8 @@ const contactLinks = [
   },
 ]
 
+const body = document.querySelector('body')
+
 export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -47,12 +49,12 @@ export default function NavigationHeader () {
 
   useEffect(() => {
     const checkScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+      setIsScrolled(body.scrollTop > 0)
     }
 
-    window.addEventListener('scroll', checkScroll)
+    body.addEventListener('scroll', checkScroll)
     return () => {
-      window.removeEventListener('scroll', checkScroll)
+      body.removeEventListener('scroll', checkScroll)
     }
   }, [])
 
