@@ -19,7 +19,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.text-8xl, .text-6xl, .text-3xl, .text-2xl, .text-xl, .text-lg, .font-bold {
     color: white;
+    letter-spacing: 0.015rem;
 }
 
 #canvas {

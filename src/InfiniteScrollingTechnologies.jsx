@@ -26,7 +26,7 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
                  className="technology"/>
             {hoveredTechnology === index && (
               <div
-                className="absolute font-lg font-bold w-full h-full bg-gray-800/20 rounded-xl backdrop-blur flex justify-center items-center shadow">
+                className="absolute font-bold w-full h-full bg-gray-800/40 rounded-xl backdrop-blur flex justify-center items-center shadow">
                 {technology.name}
               </div>
             )}

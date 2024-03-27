@@ -2,7 +2,7 @@ const email = {
   name: 'Email',
   href: 'mailto:avdn2000@yahoo.com',
   icon: (props) => (
-    <svg fill="currentColor" viewBox="0 0 24.00 24.00" {...props}>
+    <svg fill="#FFF" viewBox="0 0 24.00 24.00" {...props}>
       <g>
         <path
           d="M22,8.32V18a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V8.69L4,9.78l7.52,4.1A1,1,0,0,0,12,14a1,1,0,0,0,.5-.14L20,9.49Z"/>

@@ -54,7 +54,7 @@ export default function Hero () {
         {'I\'m a final year computer science student with experience in '}
         <br/>
         <span
-          className={`relative w-32 sm:w-36`}>
+          className={`relative w-32 sm:w-36 text-xl sm:text-2xl`}>
                           {area}
         </span>
         <span ref={spanRef}
@@ -66,7 +66,8 @@ export default function Hero () {
       <div className="mt-10 sm:mt-12">
         <Link to="projects"
               className="text-lg sm:text-xl font-semibold underline">
-          See my work <span aria-hidden="true">→</span>
+          See my work <span aria-hidden="true"
+                            className="text-lg sm:text-xl">→</span>
         </Link>
       </div>
     </main>
