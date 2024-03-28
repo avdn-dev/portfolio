@@ -58,7 +58,7 @@ export default function Hero () {
                           {area}
         </span>
         <span ref={spanRef}
-              className={`censor absolute left-[50%] transform translate-x-[-50%] w-32 sm:w-36 ${animate
+              className={`censor absolute left-[50%] transform translate-x-[-50%] w-[8.5rem] sm:w-[9.5rem] ${animate
                 ? 'censor-animate-start'
                 : 'censor-animate-end'}`}>&nbsp;
           </span>
