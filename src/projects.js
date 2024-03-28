@@ -4,7 +4,8 @@ const projects = [
     summary: 'The website you are currently viewing – it’s a single page web application designed and built from scratch, featuring fully responsive layouts and satisfying UI interactions.',
     description: 'This project is my personal website, which you are currently viewing! It’s a single page web application serving as my portfolio. Besides a single un-styled navigation component, I designed and built the website from scratch - it features fully responsive layouts and satisfying UI interaction animations.',
     hasPicture: false,
-    picture: 'https://via.placeholder.com/150',
+    thumbnail: 'logo.svg',
+    thumbnailAlt: 'AVDN logo',
     details: 'I used a modern web development stack to significantly accelerate the development process over using just the “vanilla” languages JavaScript, HTML, and CSS. The core of the project was React, which was used extensively to compose the UI. The utility classes provided by Tailwind enabled rapid and responsive styling, with some use of the styled-jsx library for more programmatic handling of animations. Navigation between pages was handled by React Router, with no page reloads required. The project\'s dependencies were managed with npm and built with Vite for simple configuration and Hot Module Reloading for live development. During development the website was continuously delivered via GitHub Actions and deployed on Github Pages.',
     technologies: [
       {
@@ -103,7 +104,8 @@ const projects = [
     summary: 'A native iOS application that simulates visual impairments – through camera filters and guided exercises – to foster empathy for individuals with visual disabilities.',
     description: 'This project is a native iOS application designed to simulate visual impairments and foster empathy for individuals with visual disabilities. The application provides camera filters and guided exercises to help users understand the challenges faced by those with visual impairments. Submitted as my 2024 Swift Student Challenge entry, the idea for it came when I accidentally discovered one of my close friends was colourblind - he purchased bright pink shoes thinking that they were grey.',
     hasPicture: false,
-    picture: 'https://via.placeholder.com/150',
+    thumbnail: 'eye-empathise.svg',
+    thumbnailAlt: 'Flat icon with hearts and sparkly eye within hands',
     details: 'Eye Empathise was built entirely in Swift, utilizing SwiftUI for UI and state management. It leverages AVFoundation and CoreImage for real time imaging processing of a camera feed and pre-generated assets to simulate visual impairments. The specific CIFilters, CIColorMatrix and CIGaussianBlur were used to simulate multiple types of colour blindness, and overall low vision. These simulations are presented in the context of challenges like distinguishing colours or reading print. As accessibility was a core focus, Apple\'s Accessibility API was employed to optimise the application for use with the Apple screen reader, VoiceOver.',
     technologies: [
       {
@@ -162,7 +164,8 @@ const projects = [
     summary: 'A backend for an account service that provides features like user management, payroll processing, and system security monitoring through a RESTful API.',
     description: 'This project is a backend for an account service, providing features such as user management, payroll processing, and system security monitoring. It was built using the Spring framework for Java, leveraging various Spring modules to streamline development and enhance functionality.',
     hasPicture: false,
-    picture: 'https://via.placeholder.com/150',
+    thumbnail: 'account-service.svg',
+    thumbnailAlt: 'Flat icon with user and payroll within circle',
     details: 'Central to the project was Spring Boot - with its convention-over-configuration approach, setting up and configuring of the project was very straightforward. Spring Web was employed to create a RESTful API, allowing potential clients to interact with the service through HTTP requests. Spring Data JPA abstracted an ORM for data persistence on a relational H2 database. Data models for users, groups, payrolls, and security events were validated using Spring Validation, and encoded to, decoded from JSON with the Jackson library. Role based access control and user verification were configured using Spring Security, with an additional event logging system implemented to monitor system security and track user activities given the sensitive nature of payrolls. Project Lombok annotations minimised boilerplate code to increase development efficiency, while IntelliJ IDEA integrations with Gradle, and JUnit/Mockito simplified the building and testing process.',
     technologies: [
       {
@@ -257,7 +260,8 @@ const projects = [
     summary: 'A full stack application with a native iOS client that leverages real-time weather data and location services to generate travel itineraries.',
     description: '',
     hasPicture: false,
-    picture: 'https://via.placeholder.com/150',
+    thumbnail: 'journey-genie.svg',
+    thumbnailAlt: 'Flat icon with plane about genie lamp',
     details: 'Journey Genie features a Flask backend that fetches real-time weather data with the Visual Crossing Weather APl, feeding the data into the itinerary generation process. It then integrates with the OpenAI API to leverage natural language processing capabilities for generating itineraries. Requests for this dynamic travel itinerary generation are sent from the frontend iOS application. Responses containing the generated itineraries – sanitised for simpler handling – are then displayed in an intuitive UI built with Swift and SwiftUI. MapKit was used enable location services and map integration when generating itineraries – these itineraries also persist with on device storage via FileManager.',
     technologies: [
       {

@@ -6,9 +6,6 @@ export default function Logo ({ height, isHovered }) {
            : ''}`}
          zoomAndPan="magnify" viewBox="0 0 208.5 180.749999" height="241"
          preserveAspectRatio="xMidYMid meet" version="1.0" fill="#FFF">
-      <defs>
-        <g/>
-      </defs>
       <g fillOpacity="1">
         <g transform="translate(72.204589, 85.006776)">
           <g>
