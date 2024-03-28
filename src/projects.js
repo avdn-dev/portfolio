@@ -7,6 +7,28 @@ const projects = [
     thumbnail: 'logo.svg',
     thumbnailAlt: 'AVDN logo',
     details: 'I used a modern web development stack to significantly accelerate the development process over using just the “vanilla” languages JavaScript, HTML, and CSS. The core of the project was React, which was used extensively to compose the UI. The utility classes provided by Tailwind enabled rapid and responsive styling, with some use of the styled-jsx library for more programmatic handling of animations. Navigation between pages was handled by React Router, with no page reloads required. The project\'s dependencies were managed with npm and built with Vite for simple configuration and Hot Module Reloading for live development. During development the website was continuously delivered via GitHub Actions and deployed on Github Pages.',
+    keyTechnologies: [
+      {
+        name: 'JavaScript',
+        image: 'javascript.svg',
+      },
+      {
+        name: 'HTML',
+        image: 'html.svg',
+      },
+      {
+        name: 'CSS',
+        image: 'css.svg',
+      },
+      {
+        name: 'React.js',
+        image: 'react.svg',
+      },
+      {
+        name: 'Tailwind CSS',
+        image: 'tailwind.svg',
+      },
+    ],
     technologies: [
       {
         name: 'React.js',
@@ -107,6 +129,16 @@ const projects = [
     thumbnail: 'eye-empathise.svg',
     thumbnailAlt: 'Flat icon with hearts and sparkly eye within hands',
     details: 'Eye Empathise was built entirely in Swift, utilizing SwiftUI for UI and state management. It leverages AVFoundation and CoreImage for real time imaging processing of a camera feed and pre-generated assets to simulate visual impairments. The specific CIFilters, CIColorMatrix and CIGaussianBlur were used to simulate multiple types of colour blindness, and overall low vision. These simulations are presented in the context of challenges like distinguishing colours or reading print. As accessibility was a core focus, Apple\'s Accessibility API was employed to optimise the application for use with the Apple screen reader, VoiceOver.',
+    keyTechnologies: [
+      {
+        name: 'Swift',
+        image: 'swift.svg',
+      },
+      {
+        name: 'SwiftUI',
+        image: 'swiftui.svg',
+      },
+    ],
     technologies: [
       {
         name: 'VoiceOver',
@@ -167,6 +199,20 @@ const projects = [
     thumbnail: 'account-service.svg',
     thumbnailAlt: 'Flat icon with user and payroll within circle',
     details: 'Central to the project was Spring Boot - with its convention-over-configuration approach, setting up and configuring of the project was very straightforward. Spring Web was employed to create a RESTful API, allowing potential clients to interact with the service through HTTP requests. Spring Data JPA abstracted an ORM for data persistence on a relational H2 database. Data models for users, groups, payrolls, and security events were validated using Spring Validation, and encoded to, decoded from JSON with the Jackson library. Role based access control and user verification were configured using Spring Security, with an additional event logging system implemented to monitor system security and track user activities given the sensitive nature of payrolls. Project Lombok annotations minimised boilerplate code to increase development efficiency, while IntelliJ IDEA integrations with Gradle, and JUnit/Mockito simplified the building and testing process.',
+    keyTechnologies: [
+      {
+        name: 'Java',
+        image: 'java.svg',
+      },
+      {
+        name: 'Spring',
+        image: 'spring.svg',
+      },
+      {
+        name: 'Spring Boot',
+        image: 'spring-boot.svg',
+      },
+    ],
     technologies: [
       {
         name: 'Spring Boot',
@@ -263,6 +309,28 @@ const projects = [
     thumbnail: 'journey-genie.svg',
     thumbnailAlt: 'Flat icon with plane about genie lamp',
     details: 'Journey Genie features a Flask backend that fetches real-time weather data with the Visual Crossing Weather APl, feeding the data into the itinerary generation process. It then integrates with the OpenAI API to leverage natural language processing capabilities for generating itineraries. Requests for this dynamic travel itinerary generation are sent from the frontend iOS application. Responses containing the generated itineraries – sanitised for simpler handling – are then displayed in an intuitive UI built with Swift and SwiftUI. MapKit was used enable location services and map integration when generating itineraries – these itineraries also persist with on device storage via FileManager.',
+    keyTechnologies: [
+      {
+        name: 'Swift',
+        image: 'swift.svg',
+      },
+      {
+        name: 'Python',
+        image: 'python.svg',
+      },
+      {
+        name: 'SwiftUI',
+        image: 'swiftui.svg',
+      },
+      {
+        name: 'UIKit',
+        image: 'uikit.svg',
+      },
+      {
+        name: 'Flask',
+        image: 'flask.svg',
+      },
+    ],
     technologies: [
       {
         name: 'OpenAI API',
