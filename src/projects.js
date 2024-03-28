@@ -91,20 +91,8 @@ const projects = [
     route: '/projects/portfolio',
     learnings: [
       {
-        summary: 'Creating responsive layouts',
-        description: 'Using Tailwind to build the responsive layouts was complicated by the changing states in React components. Fulling leaning into the utility-first approach of Tailwind allowed me to fine tune pixel perfect layouts for all screen sizes.',
-      },
-      {
-        summary: 'Writing modern React',
-        description: 'This was my first project using React as I had only used vanilla JavaScript prior. I gained a lot of practice writing functional components with hooks for state management and solved some very specific animation issues with the use of props and callbacks.',
-      },
-      {
-        summary: 'Building a single page web application',
-        description: 'Integrating React Router allowed me to create a seamless user experience in navigating the site. Nested routes were setup for hierarchical navigation of the site map.',
-      },
-      {
         summary: 'Creative coding with p5.js',
-        description: 'While designing I opted for a background gradient effect like the one on Stripe’s website, but with novel mouse interactivity. I was able to achieve this effect with an optimised 3D Perlin noise algorithm and the p5.js library. Though finetuning it for reasonable performance using p5.js was already challenging, I intend on learning either WebGL or WebAssembly to write a fully custom shader that makes the effect truly performant.',
+        description: 'While designing I opted for a background gradient effect like the one on Stripe’s website, but with novel mouse interactivity. I was able to achieve this effect with an optimised 3D Perlin noise algorithm and the p5.js library. Though fine tuning it for reasonable performance using p5.js was already challenging, I intend on learning either WebGL or WebAssembly to write a fully custom shader that makes the effect truly performant.',
       },
       {
         summary: 'Elevating the UI with animations',
@@ -115,8 +103,24 @@ const projects = [
         description: 'By coding in the Webstorm IDE I was able to use Git/npm/Vite integrations, and features like cross-file refactoring and hot module reloading for maximum development velocity. Creating a CI/CD pipeline with Github Actions allowed an automated build and deployment to a live Github Pages site every time a change was pushed to remote.',
       },
       {
+        summary: 'Cross-browser compatible styling',
+        description: 'After testing and viewing the site from Safari instead of Microsoft Edge, I realised that the CSS I wrote was not consistently rendering across browsers. I then adjusted the CSS for cross-browser compatibility, which was challenging as there were multiple barely documented quirks in specific browsers\' CSS rendering.',
+      },
+      {
         summary: 'Using a design system with Figma',
         description: 'Creating an aesthetic website was just as important as creating a functional one since I wanted to showcase my skills in design as well as development. Rather than designing on the fly I used Figma to create a prototype of the website - following a design system made development significantly easier.',
+      },
+      {
+        summary: 'Writing modern React',
+        description: 'This was my first project using React as I had only used vanilla JavaScript prior. I gained a lot of practice writing functional components with hooks for state management and solved some very specific animation issues with the use of props and callbacks.',
+      },
+      {
+        summary: 'Creating responsive layouts',
+        description: 'Using Tailwind to build the responsive layouts was complicated by the changing states in React components. Fulling leaning into the utility-first approach of Tailwind allowed me to fine tune pixel perfect layouts for all screen sizes.',
+      },
+      {
+        summary: 'Building a single page web application',
+        description: 'Integrating React Router allowed me to create a seamless user experience in navigating the site. Nested routes were setup for hierarchical navigation of the site map.',
       },
     ],
     github: 'https://github.com/4nhus/portfolio',
@@ -169,16 +173,16 @@ const projects = [
     route: '/projects/eye-empathise',
     learnings: [
       {
-        summary: 'Performant image processing with AVFoundation and CoreImage',
-        description: 'Initially I was capturing and manipulating all the full photo frames provided by the camera, but this approach was not performant. Exploring the AVFoundation API in depth led me to using a preview stream capture instead, which I then optimised CoreImage around.',
-      },
-      {
         summary: 'Building applications for accessibility',
         description: 'Using the visual impairment filters I built I noticed that there could be significant issues when the UI is not designed with accessibility in mind, especially when a screen reader is used. By auditing my application for accessibility, I was able to incorporate Apples Accessibility API such that the VoiceOver screen reader could be used seamlessly.',
       },
       {
         summary: 'Using accurate domain knowledge',
         description: 'Simulating visual impairments accurately was challenging as there were multiple models for colour blindness simulation with varying degrees of accuracy. By researching the area to find the most accurate model by Machado, Oliveira, & Fernandes (2009), I was able to translate domain knowledge into an actionable and educational tool.',
+      },
+      {
+        summary: 'Performant image processing with AVFoundation and CoreImage',
+        description: 'Initially I was capturing and manipulating all the full photo frames provided by the camera, but this approach was not performant. Exploring the AVFoundation API in depth led me to using a preview stream capture instead, which I then optimised CoreImage around.',
       },
       {
         summary: 'Creating modular views and managing state with SwiftUI',
@@ -267,16 +271,20 @@ const projects = [
     route: '/projects/account-service',
     learnings: [
       {
-        summary: 'Reducing boilerplate code with Project Lombok',
-        description: 'Adopting Project Lombok for reducing boilerplate code initially posed challenges when trying to integrate the annotations with Spring Data annotations, but ironing out the quirks led to cleaner, more maintainable code.',
-      },
-      {
-        summary: 'Managing dependencies and building with IntelliJ IDEA and Gradle',
-        description: 'Using multiple Spring modules and other libraries was streamlined with Gradle. Being able to configure the project fully within the IntelliJ IDEA also facilitated efficient development.',
-      },
-      {
         summary: 'Implementing authentication and authorization',
         description: 'Ensuring secure access specific API endpoints was crucial for an account service. Spring Security was leveraged to implement robust authentication and authorization mechanisms. Alongside implementing security best practices, I also learnt security concepts, such as JWT, OAuth2, and SSL.',
+      },
+      {
+        summary: 'Integrating with a relational database',
+        description: 'The service required integration with a relational database for data persistence and retrieval. Spring Data JPA simplified this process by providing abstractions for common database operations, significantly reducing boilerplate code. I look forward to using the interface for working with non-relational databases.',
+      },
+      {
+        summary: 'Testing with JUnit and Mockito',
+        description: 'JUnit and Mockito were employed to write unit, integration, and tests. This involved testing business logic, mocking dependencies, and ensuring the service was reliable upon restarts. Having a robust test suite was very beneficial when adding new functionality and refactoring.',
+      },
+      {
+        summary: 'Reducing boilerplate code with Project Lombok',
+        description: 'Adopting Project Lombok for reducing boilerplate code initially posed challenges when trying to integrate the annotations with Spring Data annotations, but ironing out the quirks led to cleaner, more maintainable code.',
       },
       {
         summary: 'Diving into the Spring ecosystem',
@@ -287,16 +295,12 @@ const projects = [
         description: 'Using Spring Web to create an API that followed the principles of REST consolidated my understanding of client-server interaction. The implementation and testing of the RESTful API highlighting the importance of contract testing and endpoint documentation.',
       },
       {
+        summary: 'Managing dependencies and building with IntelliJ IDEA and Gradle',
+        description: 'Using multiple Spring modules and other libraries was streamlined with Gradle. Being able to configure the project fully within the IntelliJ IDEA also facilitated efficient development.',
+      },
+      {
         summary: 'Client-server data handling',
         description: 'Building a robust API required sanitising potentially unreliable client requests – Spring Validation and Jackson were used to ensure data model integrity, enabling secure data handling.',
-      },
-      {
-        summary: 'Integrating with a relational database',
-        description: 'The service required integration with a relational database for data persistence and retrieval. Spring Data JPA simplified this process by providing abstractions for common database operations, significantly reducing boilerplate code. I look forward to using the interface for working with non-relational databases.',
-      },
-      {
-        summary: 'Testing with JUnit and Mockito',
-        description: 'JUnit and Mockito were employed to write unit, integration, and tests. This involved testing business logic, mocking dependencies, and ensuring the service was reliable upon restarts. Having a robust test suite was very beneficial when adding new functionality and refactoring.',
       },
     ],
     github: 'https://github.com/4nhus/account-service',
@@ -377,20 +381,20 @@ const projects = [
     route: '/projects/journey-genie',
     learnings: [
       {
-        summary: 'Interfacing with external APIs',
-        description: 'To build the core functionality of our service we needed to interface with multiple external APIs, which required effective handling of asynchronous operations and data parsing. Working with the external APIs also meant being reading documentation to interpret the error responses, particularly ones we received from using depleted OpenAI API keys.',
-      },
-      {
-        summary: 'Building a minimum viable product',
-        description: 'Given the time restraint of the hackathon, I had to prioritise certain features in the mobile application to ensure an MVP worth pitching. Focusing on user centric design allowed me to scope the UI to what the MVP required, which helped with time management and achieving a smooth UX.',
+        summary: 'Managing a team to deliver a project in under 48 hours',
+        description: 'As a team of 4 against teams of 6, we were limited in our project scope. Team frontend experience was also limited as I was the only one with mobile development experience. Effective communication, coordination, and delegation were hence crucial to completing the project within the timeframe. To develop features simultaneously we utilised Git and Github, and performed asynchronous reviews as team member availabilities were erratic.',
       },
       {
         summary: 'Incorporating UIKit into SwiftUI ',
         description: 'Though I tried to build the app fully using SwiftUI at first, I realised that the Map view in SwiftUI did not have the required API surface area for what I wanted to build. UIKit offered rich functionality in this area however, so I learnt to integrate the UIKit functionality of MapKit into SwiftUI with UIViewRepresentable and UIViewControllerRepresentable.',
       },
       {
-        summary: 'Managing a team to deliver a project in under 48 hours',
-        description: 'As a team of 4 against teams of 6, we were limited in our project scope. Team frontend experience was also limited as I was the only one with mobile development experience. Effective communication, coordination, and delegation were hence crucial to completing the project within the timeframe. To develop features simultaneously we utilised Git and Github, and performed asynchronous reviews as team member availabilities were erratic.',
+        summary: 'Interfacing with external APIs',
+        description: 'To build the core functionality of our service we needed to interface with multiple external APIs, which required effective handling of asynchronous operations and data parsing. Working with the external APIs also meant being reading documentation to interpret the error responses, particularly ones we received from using depleted OpenAI API keys.',
+      },
+      {
+        summary: 'Building a minimum viable product',
+        description: 'Given the time restraint of the hackathon, I had to prioritise certain features in the mobile application to ensure an MVP worth pitching. Focusing on user centric design allowed me to scope the UI to what the MVP required, which helped with time management and achieving a smooth UX.',
       },
     ],
     github: 'https://github.com/4nhus/journey-genie',

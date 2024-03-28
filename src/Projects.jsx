@@ -33,7 +33,7 @@ export default function Projects () {
               className="mx-4 text-left mb-2 sm:mb-3 lg:mb-4 sm:mx-6 lg:mx-8">{project.summary}</p>
             <div className="flex center self-center gap-1 mb-4 sm:mb-6 lg:mb-8">
               {project.keyTechnologies.map(technology => (
-                <img src={technology.image}
+                <img key={technology.name} src={technology.image}
                      alt={technology.name}
                      className="h-6 w-6 object-contain"/>
               ))}
