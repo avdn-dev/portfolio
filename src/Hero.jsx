@@ -50,7 +50,7 @@ export default function Hero () {
         className="text-6xl font-bold sm:text-8xl">
         Hi, I'm Anh!
       </h1>
-      <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-8">
+      <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-8 relative">
         {'I\'m a final year computer science student with experience in '}
         <br/>
         <span

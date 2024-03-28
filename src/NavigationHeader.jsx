@@ -37,8 +37,6 @@ const contactLinks = [
   },
 ]
 
-const body = document.querySelector('body')
-
 export default function NavigationHeader () {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,6 +44,8 @@ export default function NavigationHeader () {
     false)
   const [logoIsHovered, setLogoIsHovered] = useState(
     false)
+  
+  const body = document.querySelector('body')
 
   const resetScroll = () => {
     body.scrollTop = 0
