@@ -47,8 +47,11 @@ export default function NavigationHeader () {
   const [logoIsHovered, setLogoIsHovered] = useState(
     false)
 
-  const clickMobileMenu = () => {
+  const resetScroll = () => {
     body.scrollTop = 0
+  }
+  const clickMobileMenuAndResetScroll = () => {
+    resetScroll()
     setMobileMenuOpen(false)
   }
 
@@ -71,7 +74,8 @@ export default function NavigationHeader () {
         className="flex items-center justify-between p-6 lg:px-8 pr-8 md:pr-6"
         aria-label="Global">
         <div className="flex flex-1 justify-start">
-          <Link to="/" className="`-m-3 -mx-5 p-1.5 enlarge">
+          <Link to="/" className="`-m-3 -mx-5 p-1.5 enlarge"
+                onClick={resetScroll}>
             <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
             <Logo height="h-14" isHovered={logoIsHovered}/>
           </Link>
@@ -84,7 +88,8 @@ export default function NavigationHeader () {
         <div className="hidden md:flex flex-1 justify-center gap-x-12">
           {navigationLinks.map((item) => (
             <Link key={item.name} to={item.href}
-                  className="text-lg font-semibold underline">
+                  className="text-lg font-semibold underline"
+                  onClick={resetScroll}>
               {item.name}
             </Link>
           ))}
@@ -136,7 +141,7 @@ export default function NavigationHeader () {
               <div
                 className="flex items-center justify-between mb-4">
                 <Link to="/" className="-m-3 -mx-5 p-1.5 enlarge"
-                      onClick={clickMobileMenu}
+                      onClick={clickMobileMenuAndResetScroll}
                       onMouseEnter={() => setLogoIsHovered(true)}
                       onMouseLeave={() => setLogoIsHovered(false)}>
                   <span className="sr-only">Anh Viet Duc Nguyen Logo</span>
@@ -145,7 +150,7 @@ export default function NavigationHeader () {
                 </Link>
                 <button
                   type="button"
-                  onClick={clickMobileMenu}
+                  onClick={() => setMobileMenuOpen(false)}
                   onMouseEnter={() => setCloseMobileMenuIsHovered(true)}
                   onMouseLeave={() => setCloseMobileMenuIsHovered(false)}
                   className="mr-2 -mb-1"
@@ -163,8 +168,7 @@ export default function NavigationHeader () {
                   {navigationLinks.map((item) => (
                     <li key={item.name}><Link to={item.href}
                                               className="text-2xl font-semibold underline"
-                                              onClick={() => setMobileMenuOpen(
-                                                false)}>
+                                              onClick={clickMobileMenuAndResetScroll}>
                       {item.name}
                     </Link></li>
                   ))}
