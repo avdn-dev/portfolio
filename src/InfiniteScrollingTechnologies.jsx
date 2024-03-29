@@ -22,7 +22,7 @@ export default function InfiniteScrollingTechnologies ({ technologies }) {
             onMouseEnter={() => setHoveredTechnology(index)}
             onMouseLeave={() => setHoveredTechnology(null)}>
             <img src={`${import.meta.env.BASE_URL + technology.image}`}
-                 alt={technology.name}
+                 alt={`${technology.name} logo`}
                  className="technology"/>
             {hoveredTechnology === index && (
               <div

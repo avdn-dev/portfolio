@@ -1,13 +1,12 @@
-// TODO:
-// - Add in carousel for pictures
-
 import InfiniteScrollingTechnologies from './InfiniteScrollingTechnologies.jsx'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { Carousel } from 'react-responsive-carousel'
 
 export default function Project ({
   name,
   description,
   hasPicture,
-  picture,
+  pictures,
   details,
   technologies,
   learnings,
@@ -40,11 +39,26 @@ export default function Project ({
               coordinated the ideation and pitch creation, and assisted in
               developing the Flask backend.</p>
           }
-          <p className="leading-7">
+          <p className={`leading-7 ${hasPicture ? 'mb-8' : ''}`}>
             {description}
           </p>
-          {hasPicture && <img src="https://via.placeholder.com/150" alt=""
-                              className="rounded-lg max-w-xl"/>}
+          {hasPicture &&
+            <div
+              className={`${name === 'Journey Genie'
+                ? 'max-w-3xl'
+                : ''} self-center xl:m-0 -mx-6 lg:-mx-8`}>
+              <Carousel showThumbs={false} showStatus={false}
+                        autoPlay={true} infiniteLoop={true}
+                        dynamicHeight={true}>
+                {pictures.map((picture) => (
+                  <div key={picture.alt}>
+                    <img src={`${import.meta.env.BASE_URL + picture.src}`}
+                         alt={`Screen in ${name} showing: ${picture.alt}`}/>
+                    <p
+                      className="legend">{picture.alt}</p>
+                  </div>
+                ))}
+              </Carousel></div>}
         </section>
 
         <section className="mb-8 flex flex-col">

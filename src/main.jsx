@@ -26,8 +26,8 @@ const router = createBrowserRouter(
           <Route key={project.name} path={project.route}
                  element={<Project name={project.name}
                                    description={project.description}
-                                   hasPicture={project.hasPicture}
-                                   picture={project.picture}
+                                   hasPicture={project.hasPictures}
+                                   pictures={project.pictures}
                                    details={project.details}
                                    technologies={project.technologies}
                                    learnings={project.learnings}
