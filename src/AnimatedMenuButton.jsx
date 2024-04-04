@@ -30,7 +30,7 @@ export default function AnimatedMenuButton ({
         }
 
         button input:checked + span:after {
-          transform: translateY(-12px) rotate(45deg)
+          transform: translateY(-12px) rotate(45deg);
         }
 
         button input:checked + span:before {

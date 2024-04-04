@@ -27,7 +27,7 @@ const contactLinks = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/anh-nguyen-41870b156/',
+    href: 'https://www.linkedin.com/in/avdn',
     icon: (props) => (
       <svg fill="#FFF" viewBox="0 0 24 24" {...props}>
         <path
@@ -44,7 +44,7 @@ export default function NavigationHeader () {
     false)
   const [logoIsHovered, setLogoIsHovered] = useState(
     false)
-  
+
   const body = document.querySelector('body')
 
   const resetScroll = () => {

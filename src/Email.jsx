@@ -1,6 +1,6 @@
 const email = {
   name: 'Email',
-  href: 'mailto:avdn2000@yahoo.com',
+  href: 'mailto:avdn.dev@outlook.com',
   icon: (props) => (
     <svg fill="#FFF" viewBox="0 0 24.00 24.00" {...props}>
       <g>
