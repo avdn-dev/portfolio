@@ -77,7 +77,8 @@ export default function Project ({
           </h2>
           <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {learnings.map((learning) => (
-              <div key={learning.summary}>
+              <div key={learning.summary}
+                   className="rounded-lg shadow backdrop-blur bg-gray-800/40 ring-1 ring-white/10 p-6">
                 <dt
                   className="text-lg font-semibold">{learning.summary}</dt>
                 <dd

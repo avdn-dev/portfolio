@@ -306,7 +306,8 @@ export default function Info () {
           </p>
           <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {interests.map((interest) => (
-              <div key={interest.name}>
+              <div key={interest.name}
+                   className="rounded-lg shadow backdrop-blur bg-gray-800/40 ring-1 ring-white/10 p-6">
                 <dt className="text-lg font-semibold">{interest.name}</dt>
                 <dd
                   className="mt-1 leading-7">{interest.description}</dd>
