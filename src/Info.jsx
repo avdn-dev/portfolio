@@ -231,7 +231,7 @@ export default function Info () {
             className="flex-1"><img
             src="picture.jpeg"
             alt="Anh and his partner Madison in front of a waterfall"
-            className="rounded-lg w-full h-full info-lg:h-[648px] info-xl:h-[620px] info-2xl:h-[592px] object-cover"/>
+            className="rounded-lg w-full h-full info-md:h-[648px] info-xl:h-[620px] info-2xl:h-[592px] object-cover"/>
           </div>
         </section>
 
@@ -278,7 +278,7 @@ export default function Info () {
               </p>
             </div>
             <div
-              className="info-md:flex-1 grid grid-cols-1 sm:grid-cols-2 info:flex info:flex-col info:justify-between gap-6 info:gap-0">
+              className="info-lg:flex-1 grid grid-cols-1 sm:grid-cols-2 info:flex info:flex-col info:justify-between gap-6 info:gap-0">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="text-lg font-medium">{stat.label}</dt>
