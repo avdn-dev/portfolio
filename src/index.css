@@ -7,11 +7,21 @@ html {
     overflow: hidden;
 }
 
+@font-face {
+    font-family: 'Sk-Modernist';
+    src: url('sk-modernist.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('proxima-nova.otf') format('opentype');
+}
+
 body {
     width: 100vw;
     height: 100dvh;
     overflow-y: scroll;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Sk-Modernist', sans-serif;
     background-color: #006CFA;
 }
 
@@ -20,6 +30,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.95);
+}
+
+h1, h2 {
+    font-family: 'Proxima Nova', sans-serif;
 }
 
 .text-8xl, .text-6xl, .text-3xl, .text-2xl, .text-xl, .text-lg, .font-bold {
