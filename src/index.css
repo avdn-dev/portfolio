@@ -10,18 +10,18 @@ html {
 @font-face {
     font-family: 'Sk-Modernist';
     font-weight: normal;
-    src: url('sk-modernist.otf') format('opentype');
+    src: url('/sk-modernist.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Sk-Modernist';
     font-weight: bold;
-    src: url('sk-modernist-bold.otf') format('opentype');
+    src: url('/sk-modernist-bold.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('proxima-nova.otf') format('opentype');
+    src: url('/proxima-nova.otf') format('opentype');
 }
 
 body {
