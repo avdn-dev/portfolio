@@ -25,7 +25,7 @@ export default function Projects() {
                             `}</style>
                         </div>
                         <h2
-                            className="text-2xl mt-4 font-bold mb-2 sm:mt-6 sm:mb-3 lg:mt-8 lg:mb-4">{project.name}</h2>
+                            className="text-2xl mt-4 mb-2 sm:mt-6 sm:mb-3 lg:mt-8 lg:mb-4">{project.name}</h2>
                         <p
                             className="mx-4 text-left mb-2 sm:mb-3 lg:mb-4 sm:mx-6 lg:mx-8 flex-1">{project.summary}</p>
                         <div className="flex center self-center gap-1 mb-4 sm:mb-6 lg:mb-8">

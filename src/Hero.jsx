@@ -2,9 +2,10 @@ import {Link} from 'react-router-dom'
 import {useEffect, useRef, useState} from 'react'
 
 const areas = [
+    'iOS dev 🍎📱',
+    'Android dev',
     'backend dev',
     'web dev 🌏👨🏻‍💻',
-    'iOS dev 🍎📱',
     'UI design 👨🏻‍🎨']
 
 export default function Hero() {
@@ -48,10 +49,10 @@ export default function Hero() {
             className="flex flex-col text-center flex-grow px-8 justify-center items-center">
             <h1
                 className="text-6xl font-bold sm:text-8xl">
-                Hi, I'm Anh!
+                Hi, I&apos;m Anh!
             </h1>
             <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-8 relative">
-                {'I\'m a final year computer science student with experience in '}
+                I&apos;m a software engineer with awards and experience in
                 <br/>
                 <span
                     className={`relative w-32 sm:w-36 text-xl sm:text-2xl`}>

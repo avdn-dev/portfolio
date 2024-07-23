@@ -199,7 +199,7 @@ export default function Info() {
                         <h1 className="text-6xl mb-12 font-bold">
                             About me
                         </h1>
-                        <h2 className="text-3xl mb-8 font-bold">
+                        <h2 className="text-3xl mb-8">
                             My background
                         </h2>
                         <p className="leading-7">
@@ -236,7 +236,7 @@ export default function Info() {
                 </section>
 
                 <section className="mb-16 flex flex-col">
-                    <h2 className="text-3xl mb-8 font-bold">
+                    <h2 className="text-3xl mb-8">
                         My experience
                     </h2>
                     <div className="flex flex-col info:flex-row gap-10">
@@ -290,14 +290,14 @@ export default function Info() {
                 </section>
 
                 <section className="mb-8">
-                    <h2 className="text-3xl mb-4 font-bold">
+                    <h2 className="text-3xl mb-4">
                         Tools and technologies
                     </h2>
                     <InfiniteScrollingTechnologies technologies={technologies}/>
                 </section>
 
                 <section>
-                    <h2 className="text-3xl mb-8 font-bold">
+                    <h2 className="text-3xl mb-8">
                         My interests
                     </h2>
                     <p className="leading-7 mb-6">

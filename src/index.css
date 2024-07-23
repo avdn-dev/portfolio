@@ -20,8 +20,15 @@ html {
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('/proxima-nova.otf') format('opentype');
+    font-family: 'Proxima Sera';
+    font-weight: normal;
+    src: url('/proxima-sera-medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Sera';
+    font-weight: bold;
+    src: url('/proxima-sera-bold.otf') format('opentype');
 }
 
 body {
@@ -40,7 +47,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Proxima Sera', sans-serif;
 }
 
 .text-8xl, .text-6xl, .text-3xl, .text-2xl, .text-xl, .text-lg, .font-bold {
