@@ -284,6 +284,13 @@
     </script>
 </head>
 <body>
+<svg height="0" width="0">
+    <filter id="noiseFilter">
+        <feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/>
+    </filter>
+</svg>
+<div id="noise-layer"></div>
+<div id="darkening-layer"></div>
 <div id="canvas"></div>
 <div id="root"></div>
 <script src="/src/main.jsx" type="module"></script>
