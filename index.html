@@ -231,7 +231,7 @@
         let mouseInteractionBoundary = 0.4
 
         function setup() {
-            let canvas = createCanvas(windowWidth, windowHeight)
+            let canvas = createCanvas(displayWidth, displayHeight)
             canvas.parent('canvas')
             resizeVariables()
             color1 = color('#006CFA')
@@ -242,9 +242,9 @@
 
         function draw() {
             let yoff = 0
-            for (let y = 0; y <= windowHeight + cellSize; y += cellSize) {
+            for (let y = 0; y <= displayHeight + cellSize; y += cellSize) {
                 let xoff = 0
-                for (let x = 0; x <= windowWidth + cellSize; x += cellSize) {
+                for (let x = 0; x <= displayWidth + cellSize; x += cellSize) {
                     let d = dist(mouseX, mouseY, x, y) / maxDist
                     let z = simplex3(xoff, yoff, zoff)
                     if (d < mouseInteractionBoundary) {
@@ -271,26 +271,25 @@
         }
 
         function windowResized() {
-            resizeCanvas(windowWidth, windowHeight)
+            resizeCanvas(displayWidth, displayHeight)
             resizeVariables()
         }
 
         function resizeVariables() {
-            cellSize = max(windowHeight, windowWidth) / numberOfCells
-            cols = windowWidth / cellSize
-            rows = windowHeight / cellSize
-            maxDist = dist(0, 0, windowWidth, windowHeight)
+            cellSize = max(displayHeight, displayWidth) / numberOfCells
+            cols = displayWidth / cellSize
+            rows = displayHeight / cellSize
+            maxDist = dist(0, 0, displayWidth, displayHeight)
         }
     </script>
 </head>
 <body>
 <svg height="0" width="0">
     <filter id="noiseFilter">
-        <feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/>
+        <feTurbulence baseFrequency="0.7" numOctaves="3" stitchTiles="noStitch" type="fractalNoise"/>
     </filter>
 </svg>
 <div id="noise-layer"></div>
-<div id="darkening-layer"></div>
 <div id="canvas"></div>
 <div id="root"></div>
 <script src="/src/main.jsx" type="module"></script>
