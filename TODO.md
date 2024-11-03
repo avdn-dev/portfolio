@@ -5,3 +5,5 @@
 - Add page transitions
 - Add themes for gradients
 - Add more pictures/video on info page
+- Preload project images, about me image
+- Make sure image placeholders don't collapse space when image hasn't loaded

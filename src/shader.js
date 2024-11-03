@@ -8,7 +8,7 @@ const numCells = 500
 // Inverse blob size
 const inc = 0.002
 // Blob speed
-const zinc = 0.003
+const zinc = 0.006
 // Initial "time" offset
 let zoff = 0.0
 // Mouse coordinates for interactivity
@@ -525,7 +525,6 @@ const canvasToDisplaySizeMap = new Map([[canvas, [100, 100]]]);
       0 /* Start at 0th value in VBO */,
       numCells * numCells * 6/* draw enough vertices to fill canvas */,
     )
-    zoff += zinc
 
     // Ask the browser to call us back soon
     requestAnimationFrame(render)
@@ -533,6 +532,9 @@ const canvasToDisplaySizeMap = new Map([[canvas, [100, 100]]]);
 
   // Call render function to kick-start the animation loop
   requestAnimationFrame(render)
+
+  // Increment zoff to advance the animation
+  setInterval(() => {zoff += zinc}, 1000 / 60)
 
   // Resize observer to ensure canvas is always fills window
   const resizeObserver = new ResizeObserver((entries) => {
