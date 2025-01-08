@@ -358,7 +358,7 @@ if (seeded) {
     // Initialise the WebGL2 context
     const gl = canvas.getContext('webgl2')
 
-    // Only continue if WebGL is available and working
+    // Only continue if WebGL2 is available and working
     if (!gl) throw new Error('Could not initialize Web2GL')
 
     // Initialize a new shader program, by compiling the vertex & fragment shaders,
