@@ -347,225 +347,228 @@ const seeded = function simplexSeed (seed) {
 }(Math.random())
 
 const canvas = document.querySelector('canvas')
-const canvasToDisplaySizeMap = new Map([[canvas, [100, 100]]]);
+const canvasToDisplaySizeMap = new Map([[canvas, [100, 100]]])
 
 // The main function that sets everything up and starts the animation loop
-(function () {
-  if (!(canvas instanceof HTMLCanvasElement))
-    throw new Error('No canvas found')
+if (seeded) {
+  (function () {
+    if (!(canvas instanceof HTMLCanvasElement))
+      throw new Error('No canvas found')
 
-  // Initialise the WebGL2 context
-  const gl = canvas.getContext('webgl2')
+    // Initialise the WebGL2 context
+    const gl = canvas.getContext('webgl2')
 
-  // Only continue if WebGL is available and working
-  if (!gl) throw new Error('Could not initialize Web2GL')
+    // Only continue if WebGL is available and working
+    if (!gl) throw new Error('Could not initialize Web2GL')
 
-  // Initialize a new shader program, by compiling the vertex & fragment shaders,
-  // linking them, and looking up data location.
-  const program = function initializeProgram () {
-    // Uploads the shader source (vertex or fragment) and compile the shader
-    function loadShader (
-      type /* gl.VERTEX_SHADER or gl.FRAGMENT_SHADER */,
-      source /* the .glsl source */,
-    ) {
-      const shader = gl.createShader(type)
-      if (!shader) throw new Error('could not create shader')
+    // Initialize a new shader program, by compiling the vertex & fragment shaders,
+    // linking them, and looking up data location.
+    const program = function initializeProgram () {
+      // Uploads the shader source (vertex or fragment) and compile the shader
+      function loadShader (
+        type /* gl.VERTEX_SHADER or gl.FRAGMENT_SHADER */,
+        source /* the .glsl source */,
+      ) {
+        const shader = gl.createShader(type)
+        if (!shader) throw new Error('could not create shader')
 
-      gl.shaderSource(shader, source)
-      gl.compileShader(shader)
+        gl.shaderSource(shader, source)
+        gl.compileShader(shader)
 
-      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        throw new Error(
-          gl.getShaderInfoLog(shader) ?? 'could not compile shader')
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+          throw new Error(
+            gl.getShaderInfoLog(shader) ?? 'could not compile shader')
+        }
+
+        return shader
       }
 
-      return shader
-    }
+      const vertShader = loadShader(gl.VERTEX_SHADER, vertexShaderSource)
+      const fragShader = loadShader(gl.FRAGMENT_SHADER, fragmentShaderSource)
 
-    const vertShader = loadShader(gl.VERTEX_SHADER, vertexShaderSource)
-    const fragShader = loadShader(gl.FRAGMENT_SHADER, fragmentShaderSource)
+      const program = gl.createProgram()
 
-    const program = gl.createProgram()
-
-    if (!program) {
-      gl.deleteShader(vertShader)
-      gl.deleteShader(fragShader)
-      throw new Error('could not create shader program')
-    }
-
-    gl.attachShader(program, vertShader)
-    gl.attachShader(program, fragShader)
-    gl.linkProgram(program)
-
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      gl.deleteShader(vertShader)
-      gl.deleteShader(fragShader)
-      const errorMessage = gl.getProgramInfoLog(program)
-      gl.deleteProgram(program)
-      throw new Error(errorMessage ?? 'could not link program')
-    }
-
-    gl.useProgram(program)
-
-    return program
-  }()
-
-  // Look up attributes & uniforms
-  const shaderInputs = function lookupShaderInputs () {
-    // Look up the locations for attribute & uniforms
-    const aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition')
-
-    if (aVertexPosition < 0)
-      throw new Error('shader attribute aVertexPosition not found')
-
-    const perm = gl.getUniformLocation(program, 'perm')
-    const gradP = gl.getUniformLocation(program, 'gradP')
-    const inc = gl.getUniformLocation(program, 'inc')
-    const numCells = gl.getUniformLocation(program, 'numCells')
-    const zoff = gl.getUniformLocation(program, 'zoff')
-    const uMouse = gl.getUniformLocation(program, 'uMouse')
-    const mouseInteractionBoundary = gl.getUniformLocation(program,
-      'mouseInteractionBoundary')
-
-    return {
-      aVertexPosition,
-      perm,
-      gradP,
-      inc,
-      numCells,
-      zoff,
-      uMouse,
-      mouseInteractionBoundary,
-    }
-  }()
-
-  // Generate vertex data for a rectangle covering the whole canvas using clip coordinates.
-  const vertices = function generateTriangleVertices () {
-    const cellSize = 2 / numCells
-    const vertices = []
-
-    // For each rectangular cell, create two triangles
-    for (let y = 0; y < 2; y += cellSize) {
-      for (let x = -1; x < 1; x += cellSize) {
-        // First triangle
-        vertices.push(x, 1 - y)
-        vertices.push(x, 1 - (y + cellSize))
-        vertices.push(x + cellSize, 1 - y)
-
-        // Second triangle
-        vertices.push(x, 1 - (y + cellSize))
-        vertices.push(x + cellSize, 1 - (y + cellSize))
-        vertices.push(x + cellSize, 1 - y)
+      if (!program) {
+        gl.deleteShader(vertShader)
+        gl.deleteShader(fragShader)
+        throw new Error('could not create shader program')
       }
-    }
 
-    return new Float32Array(vertices)
-  }()
+      gl.attachShader(program, vertShader)
+      gl.attachShader(program, fragShader)
+      gl.linkProgram(program)
 
-  // Create a Vertex Buffer Object to send vertex data to the vertex shader.
-  const vbo = gl.createBuffer()
-  if (!vbo) throw new Error('Could not create VBO')
-  gl.bindBuffer(gl.ARRAY_BUFFER, vbo)
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        gl.deleteShader(vertShader)
+        gl.deleteShader(fragShader)
+        const errorMessage = gl.getProgramInfoLog(program)
+        gl.deleteProgram(program)
+        throw new Error(errorMessage ?? 'could not link program')
+      }
 
-  // Load the data
-  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW)
+      gl.useProgram(program)
 
-  // Bind the data in the VBO to the vertex shader's 'aVertexPosition' attribute.
-  gl.vertexAttribPointer(
-    shaderInputs.aVertexPosition,
-    2 /* values per vertex (X & Y) */,
-    gl.FLOAT /* the values are floats (32bits) */,
-    false /* do not normalize the values */,
-    0 /* assume contiguous data & infer stride (2 * sizeof float)*/,
-    0 /* start at offset = 0 */,
-  )
+      return program
+    }()
 
-  // Enable attributes since they are disabled by default
-  gl.enableVertexAttribArray(shaderInputs.aVertexPosition)
+    // Look up attributes & uniforms
+    const shaderInputs = function lookupShaderInputs () {
+      // Look up the locations for attribute & uniforms
+      const aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition')
 
-  // Set up the all the uniforms for the vertex shader
-  gl.uniform1iv(shaderInputs.perm, perm)
-  gl.uniform3fv(shaderInputs.gradP, gradP.flatMap(g => [g.x, g.y, g.z]))
-  gl.uniform1f(shaderInputs.inc, inc)
-  gl.uniform1f(shaderInputs.numCells, numCells)
-  gl.uniform1f(shaderInputs.zoff, zoff)
-  gl.uniform2f(shaderInputs.uMouse, mouse.x, mouse.y)
-  gl.uniform1f(shaderInputs.mouseInteractionBoundary, mouseInteractionBoundary)
+      if (aVertexPosition < 0)
+        throw new Error('shader attribute aVertexPosition not found')
 
-  function resizeCanvasToDisplaySize (canvas) {
-    // Get the size the browser is displaying the canvas in device pixels.
-    const [displayWidth, displayHeight] = canvasToDisplaySizeMap.get(canvas)
+      const perm = gl.getUniformLocation(program, 'perm')
+      const gradP = gl.getUniformLocation(program, 'gradP')
+      const inc = gl.getUniformLocation(program, 'inc')
+      const numCells = gl.getUniformLocation(program, 'numCells')
+      const zoff = gl.getUniformLocation(program, 'zoff')
+      const uMouse = gl.getUniformLocation(program, 'uMouse')
+      const mouseInteractionBoundary = gl.getUniformLocation(program,
+        'mouseInteractionBoundary')
 
-    // Check if the canvas is not the same size.
-    const needResize = canvas.width !== displayWidth ||
-      canvas.height !== displayHeight
+      return {
+        aVertexPosition,
+        perm,
+        gradP,
+        inc,
+        numCells,
+        zoff,
+        uMouse,
+        mouseInteractionBoundary,
+      }
+    }()
 
-    if (needResize) {
-      // Make the canvas the same size
-      canvas.width = displayWidth
-      canvas.height = displayHeight
-    }
+    // Generate vertex data for a rectangle covering the whole canvas using clip coordinates.
+    const vertices = function generateTriangleVertices () {
+      const cellSize = 2 / numCells
+      const vertices = []
 
-    return needResize
-  }
+      // For each rectangular cell, create two triangles
+      for (let y = 0; y < 2; y += cellSize) {
+        for (let x = -1; x < 1; x += cellSize) {
+          // First triangle
+          vertices.push(x, 1 - y)
+          vertices.push(x, 1 - (y + cellSize))
+          vertices.push(x + cellSize, 1 - y)
 
-  function render () {
-    resizeCanvasToDisplaySize(gl.canvas)
-    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
+          // Second triangle
+          vertices.push(x, 1 - (y + cellSize))
+          vertices.push(x + cellSize, 1 - (y + cellSize))
+          vertices.push(x + cellSize, 1 - y)
+        }
+      }
 
-    // Inject the current "time" and mouse coordinates into vertex shader
-    gl.uniform1f(shaderInputs.zoff, zoff)
-    gl.uniform2f(shaderInputs.uMouse, mouse.x * 4 - 1, -(mouse.y * 4 - 1))
+      return new Float32Array(vertices)
+    }()
 
-    // With bound buffer, draw the data
-    // NOTE: because our the vertices cover the entire canvas gl.clear() isn't required
-    // since every pixel will be rewritten
-    gl.drawArrays(
-      gl.TRIANGLES /* draw triangles */,
-      0 /* Start at 0th value in VBO */,
-      numCells * numCells * 6/* draw enough vertices to fill canvas */,
+    // Create a Vertex Buffer Object to send vertex data to the vertex shader.
+    const vbo = gl.createBuffer()
+    if (!vbo) throw new Error('Could not create VBO')
+    gl.bindBuffer(gl.ARRAY_BUFFER, vbo)
+
+    // Load the data
+    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW)
+
+    // Bind the data in the VBO to the vertex shader's 'aVertexPosition' attribute.
+    gl.vertexAttribPointer(
+      shaderInputs.aVertexPosition,
+      2 /* values per vertex (X & Y) */,
+      gl.FLOAT /* the values are floats (32bits) */,
+      false /* do not normalize the values */,
+      0 /* assume contiguous data & infer stride (2 * sizeof float)*/,
+      0 /* start at offset = 0 */,
     )
 
-    // Ask the browser to call us back soon
+    // Enable attributes since they are disabled by default
+    gl.enableVertexAttribArray(shaderInputs.aVertexPosition)
+
+    // Set up the all the uniforms for the vertex shader
+    gl.uniform1iv(shaderInputs.perm, perm)
+    gl.uniform3fv(shaderInputs.gradP, gradP.flatMap(g => [g.x, g.y, g.z]))
+    gl.uniform1f(shaderInputs.inc, inc)
+    gl.uniform1f(shaderInputs.numCells, numCells)
+    gl.uniform1f(shaderInputs.zoff, zoff)
+    gl.uniform2f(shaderInputs.uMouse, mouse.x, mouse.y)
+    gl.uniform1f(shaderInputs.mouseInteractionBoundary,
+      mouseInteractionBoundary)
+
+    function resizeCanvasToDisplaySize (canvas) {
+      // Get the size the browser is displaying the canvas in device pixels.
+      const [displayWidth, displayHeight] = canvasToDisplaySizeMap.get(canvas)
+
+      // Check if the canvas is not the same size.
+      const needResize = canvas.width !== displayWidth ||
+        canvas.height !== displayHeight
+
+      if (needResize) {
+        // Make the canvas the same size
+        canvas.width = displayWidth
+        canvas.height = displayHeight
+      }
+
+      return needResize
+    }
+
+    function render () {
+      resizeCanvasToDisplaySize(gl.canvas)
+      gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
+
+      // Inject the current "time" and mouse coordinates into vertex shader
+      gl.uniform1f(shaderInputs.zoff, zoff)
+      gl.uniform2f(shaderInputs.uMouse, mouse.x * 4 - 1, -(mouse.y * 4 - 1))
+
+      // With bound buffer, draw the data
+      // NOTE: because our the vertices cover the entire canvas gl.clear() isn't required
+      // since every pixel will be rewritten
+      gl.drawArrays(
+        gl.TRIANGLES /* draw triangles */,
+        0 /* Start at 0th value in VBO */,
+        numCells * numCells * 6/* draw enough vertices to fill canvas */,
+      )
+
+      // Ask the browser to call us back soon
+      requestAnimationFrame(render)
+    }
+
+    // Call render function to kick-start the animation loop
     requestAnimationFrame(render)
-  }
 
-  // Call render function to kick-start the animation loop
-  requestAnimationFrame(render)
+    // Increment zoff to advance the animation
+    setInterval(() => {zoff += zinc}, 1000 / 60)
 
-  // Increment zoff to advance the animation
-  setInterval(() => {zoff += zinc}, 1000 / 60)
-
-  // Resize observer to ensure canvas is always fills window
-  const resizeObserver = new ResizeObserver((entries) => {
-    for (const entry of entries) {
-      let width
-      let height
-      let dpr = window.devicePixelRatio
-      if (entry.devicePixelContentBoxSize) {
-        // NOTE: Only this path gives the correct answer. The other 2 paths are an imperfect fallback
-        // for browsers that don't provide anyway to do this
-        width = entry.devicePixelContentBoxSize[0].inlineSize
-        height = entry.devicePixelContentBoxSize[0].blockSize
-        dpr = 1 // it's already in width and height
-      } else if (entry.contentBoxSize) {
-        if (entry.contentBoxSize[0]) {
-          width = entry.contentBoxSize[0].inlineSize
-          height = entry.contentBoxSize[0].blockSize
+    // Resize observer to ensure canvas is always fills window
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        let width
+        let height
+        let dpr = window.devicePixelRatio
+        if (entry.devicePixelContentBoxSize) {
+          // NOTE: Only this path gives the correct answer. The other 2 paths are an imperfect fallback
+          // for browsers that don't provide anyway to do this
+          width = entry.devicePixelContentBoxSize[0].inlineSize
+          height = entry.devicePixelContentBoxSize[0].blockSize
+          dpr = 1 // it's already in width and height
+        } else if (entry.contentBoxSize) {
+          if (entry.contentBoxSize[0]) {
+            width = entry.contentBoxSize[0].inlineSize
+            height = entry.contentBoxSize[0].blockSize
+          } else {
+            // legacy
+            width = entry.contentBoxSize.inlineSize
+            height = entry.contentBoxSize.blockSize
+          }
         } else {
           // legacy
-          width = entry.contentBoxSize.inlineSize
-          height = entry.contentBoxSize.blockSize
+          width = entry.contentRect.width
+          height = entry.contentRect.height
         }
-      } else {
-        // legacy
-        width = entry.contentRect.width
-        height = entry.contentRect.height
+        const displayWidth = Math.round(width * dpr)
+        const displayHeight = Math.round(height * dpr)
+        canvasToDisplaySizeMap.set(entry.target, [displayWidth, displayHeight])
       }
-      const displayWidth = Math.round(width * dpr)
-      const displayHeight = Math.round(height * dpr)
-      canvasToDisplaySizeMap.set(entry.target, [displayWidth, displayHeight])
-    }
-  })
-  resizeObserver.observe(canvas, { box: 'content-box' })
-})()
+    })
+    resizeObserver.observe(canvas, { box: 'content-box' })
+  })()
+}
