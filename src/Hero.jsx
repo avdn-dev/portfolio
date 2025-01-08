@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 const areas = [
   'iOS dev 🍎📱',
   'Android dev',
-  'backend dev',
-  'web dev 🌏👨🏻‍💻',
   'UI design 👨🏻‍🎨']
 
 export default function Hero () {
@@ -52,7 +50,7 @@ export default function Hero () {
         Hi, I&apos;m Anh!
       </h1>
       <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-8 relative">
-        I&apos;m a software engineer with awards and experience in
+        I&apos;m a mobile software engineer with awards and experience in
         <br/>
         <span
           className={`relative w-32 sm:w-36 text-xl sm:text-2xl`}>
