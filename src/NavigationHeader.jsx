@@ -14,7 +14,7 @@ const navigationLinks = [
 const contactLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com/4nhus',
+    href: 'https://github.com/avdn-dev',
     icon: (props) => (
       <svg fill="#FFF" viewBox="0 0 24 24" {...props}>
         <path

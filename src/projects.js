@@ -124,7 +124,7 @@ const projects = [
         description: 'Integrating React Router allowed me to create a seamless user experience in navigating the site. Nested routes were setup for hierarchical navigation of the site map.',
       },
     ],
-    github: 'https://github.com/4nhus/portfolio',
+    github: 'https://github.com/avdn-dev/portfolio',
   },
   {
     name: 'Eye Empathise',
@@ -232,7 +232,7 @@ const projects = [
         description: 'At first, I was processing the image pipeline with the main actor, but this was causing the UI to become unresponsive at times since the processing occurred during interactions. Pushing the processing onto an alternate actor fixed this performance issue.',
       },
     ],
-    github: 'https://github.com/4nhus/eye-empathise',
+    github: 'https://github.com/avdn-dev/eye-empathise',
   },
   {
     name: 'Account Service',
@@ -343,7 +343,7 @@ const projects = [
         description: 'Building a robust API required sanitising potentially unreliable client requests – Spring Validation and Jackson were used to ensure data model integrity, enabling secure data handling.',
       },
     ],
-    github: 'https://github.com/4nhus/account-service',
+    github: 'https://github.com/avdn-dev/account-service',
   },
   {
     name: 'Journey Genie',
@@ -471,7 +471,7 @@ const projects = [
         description: 'Given the time restraint of the hackathon, I had to prioritise certain features in the mobile application to ensure an MVP worth pitching. Focusing on user centric design allowed me to scope the UI to what the MVP required, which helped with time management and achieving a smooth UX.',
       },
     ],
-    github: 'https://github.com/4nhus/journey-genie',
+    github: 'https://github.com/avdn-dev/journey-genie',
   },
 ]
 
