@@ -40,7 +40,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path={'info'} element={<Info/>}/>
     </Route>,
-  ), { basename: import.meta.env.DEV ? '/' : '/portfolio/' })
+  ), { basename: '/' })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
